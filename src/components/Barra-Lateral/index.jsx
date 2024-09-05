@@ -8,39 +8,39 @@ import FiltraPrecio from '../FIltroRangoPrecio';
 const BarraLateral = () => {
 
     //estado para check venta/alq
-    const [operacion, setTipo] = useState(''); 
+    const [operacion, setOperacio] = useState('');
     const dispatch = useDispatch();
     
     const handleFilterChange = (event) => {
         const { value } = event.target;
-        setTipo(value === operacion ? '' : value);
+        setOperacio(value === operacion ? '' : value);
     };
 
     const handleClick = (e) => {
         switch (e.target.id) {
             case 'depto':
-                dispatch(getProps({operacion, tipo:'Departamento'}));
+                dispatch(getProps(0, 0, operacion, 'Departamento'));
                 break;
             case 'casa':
-                
+                dispatch(getProps(0, 0, operacion, 'Casa'));
                 break;
             case 'ph':
-                
+                dispatch(getProps(0, 0, operacion, 'PH'));
                 break;
             case 'local':
-                
+                dispatch(getProps(0, 0, operacion, 'Local'))
                 break;
             case 'terreno':
-                
+                dispatch(getProps(0, 0, operacion, 'Terreno'))
                 break;
             case 'oficina':
-                
+                dispatch(getProps(0, 0, operacion, 'Oficina'))
                 break;
             case 'cochera':
-                
+                dispatch(getProps(0, 0, operacion, 'Cochera'))
                 break;
             case 'destacada':
-                
+                //dispatch(getProps(0, 0, operacion, 'destacadaEnWeb'))//ver tema destacada
                 break;
             case 'todas':
                 dispatch(getProps());
@@ -55,7 +55,7 @@ const BarraLateral = () => {
                 dispatch(getProps()); 
             }
             if(operacion !== ''){ 
-                dispatch(getProps(operacion));                
+                dispatch(getProps(0, 0, operacion));                
             }
     }, [dispatch, operacion]);
 
@@ -68,28 +68,28 @@ const BarraLateral = () => {
             <div className='opc-venta-alq'>
                 <label>VENTA</label>
                 <input 
-                    id='venta'
+                    id='Venta'
                         type="checkbox" 
-                        value="venta" 
+                        value="Venta" 
                         checked={operacion === 'Venta'} 
                         onChange={handleFilterChange}
                         className='input-check-venta'
                     />
                 <label> - ALQUILER</label>
                 <input 
-                    id='alquiler'
+                    id='Alquiler'
                         type="checkbox" 
-                        value="alquiler" 
+                        value="Alquiler" 
                         checked={operacion === 'Alquiler'} 
                         onChange={handleFilterChange}
                         className='input-check-alq' 
                 />
                 <label> - ALQUILER Temp.</label>
                 <input
-                    id='alquilerTemp'
+                    id='Alquiler Temporal'
                     type="checkbox"
-                    value="alquilerTemp"
-                    checked={operacion === "Alquiler temporal"}
+                    value="Alquiler Temporal"
+                    checked={operacion === "Alquiler Temporal"}
                     onChange={handleFilterChange}
                     className='input-check-alq'
                 />
