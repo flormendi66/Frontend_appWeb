@@ -10,8 +10,8 @@
   outline: none;
   margin-right: 10px;
   margin-bottom: 10px;
-  color: black;
-  background-color: rgb(255, 255, 255);
+  color: var(--primary-color);
+  background-color: var(--color-negro-logo);
 }
 
 .favorited{

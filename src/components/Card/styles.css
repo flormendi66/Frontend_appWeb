@@ -17,8 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(6, 6, 6);
-    background-color: rgba(187, 193, 193, 0.74);
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
     border-radius: 15px 15px 0 0;
     
 }
@@ -73,8 +73,8 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;    
-    color: rgb(10, 10, 10);
-    background-color: rgb(255, 255, 255);
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
 }
 .card-info1 .cont-info1{
     display: flex;
@@ -88,8 +88,14 @@
 .card-info1 .cont-info1 span {
     color: grey;
 }
-.card-info1 .descrip {
+.cont-titulo-publicacion{
+    width: 95%;
+    color: var(--primary-color);
+    background-color: var(--color-negro-logo);
+}
+.tituloPublicacion {
     margin: 0 0 0 10px;
+    background-color: var(--color-negro-logo);
 }
 .cont-precio-fav{
     width: 100%;    

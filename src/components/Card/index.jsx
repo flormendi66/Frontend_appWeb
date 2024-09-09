@@ -50,7 +50,9 @@ function Card({ id, codigoReferencia, direccion, descripcion, disposicion, expen
                         Direcc: {direccion}
                     </p>
                 </div>
-                <p className='descrip'>{tituloPublicacion}</p>
+                <div className='cont-titulo-publicacion'>
+                    <p className='tituloPublicacion'>{tituloPublicacion}</p>
+                </div>
 
                 <div className='cont-precio-fav'>
                     <p className='precio'>
