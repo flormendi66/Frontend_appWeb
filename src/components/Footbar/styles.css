@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;  
     align-items: center;
-    background-color: black;
+    background-color: var(--color-negro-logo);
 }
 .footer {
     width: 80%;
@@ -27,14 +27,16 @@ footer ul {
     width: 100%;
 }
 .logo-footbar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
 }
 footer ul li {
     display: inline-block;
     position: relative;
     width: 35%;
+}
+.info-contactos{
+    font-size: 18px;
 }
 /* color linea sup */
 footer ul li h2 {
@@ -83,7 +85,15 @@ footer ul li p {
     margin-bottom: 5px;
 }
 .icono-redes-foot{
-    font-size: xx-large;
+    width: 70px;
+    height: 70px;
+}
+.cont-info-derechos{
+    width: 80%;
+    border-top: 1px solid var(--primary-color);
+}
+.info-derechos{
+    color: var(--dorado-oscuro);
 }
 
 @media screen and (max-width: 900px){
