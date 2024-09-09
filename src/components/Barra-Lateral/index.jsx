@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { getProps, } from '../../Redux/Actions';
 import './estilos.css'; 
+/* import FiltraPrecio from '../FIltroRangoPrecio'; */
 
 
 const BarraLateral = () => {
@@ -61,11 +62,12 @@ const BarraLateral = () => {
     return (
         <div className='cont-barra' >
             <div className='cont-titulo-filtro'>
-                <p>Filtros</p>
+                <p>Filtros Propiedades</p>
             </div>
 
             <div className='opc-venta-alq'>
-                <label>VENTA</label>
+                <div className='cont-venta-alq'>
+                <label className='label-filtro-tipo-operacion'>VENTA</label>
                 <input 
                     id='Venta'
                         type="checkbox" 
@@ -74,7 +76,7 @@ const BarraLateral = () => {
                         onChange={handleFilterChange}
                         className='input-check-venta'
                     />
-                <label> - ALQUILER</label>
+                <label className='label-filtro-tipo-operacion'>ALQUILER</label>
                 <input 
                     id='Alquiler'
                         type="checkbox" 
@@ -83,7 +85,10 @@ const BarraLateral = () => {
                         onChange={handleFilterChange}
                         className='input-check-alq' 
                 />
-                <label> - ALQUILER Temp.</label>
+                </div>
+                
+                <div className='cont-venta-alq'>
+                <label className='label-filtro-tipo-operacion'>ALQUILER TEMPORAL.</label>
                 <input
                     id='Alquiler Temporal'
                     type="checkbox"
@@ -92,6 +97,7 @@ const BarraLateral = () => {
                     onChange={handleFilterChange}
                     className='input-check-alq'
                 />
+                </div>
             </div>
 
             <div className='cont-btn-filtros'>
@@ -106,7 +112,7 @@ const BarraLateral = () => {
                 <button className='boton-filtros' id='todas'  onClick={(e) => handleClick(e)}>Todas</button>
             </div>
 
-            
+            {/* <FiltraPrecio operacion={operacion}/> */}
         </div>        
     );
 };
