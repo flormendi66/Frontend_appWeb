@@ -19,23 +19,29 @@ function Footbar() {
                         {/* Contactanos */}
                         <li>
                             <h2>
-                                <p>CONTACTANOS</p>
+                                <p className='titulo-col-foot'>Encontranos en</p>
                             </h2>
                             <p className='info-contactos'>
                                 Belgrano 2214 - Mar del Plata
-                                <br></br>
-                                Teléfono (0223) 4915977
-                                <br></br>
-                                Whatsapp +54 9 (223) 6349596
-                                <br></br>
-                                info@belluccipropiedades.com
-                                <br></br>
                             </p>
+
+                            <p className='info-contactos'>
+                                Teléfono (0223) 4915977
+                            </p>
+
+                            <p className='info-contactos'>
+                                Whatsapp +54 9 (223) 6349596
+                            </p>
+
+                            <p className='info-contactos'>
+                                info@belluccipropiedades.com
+                            </p>
+
                         </li>
                         {/* Links */}
                         <li>
                             <h2>
-                                <p>Links</p>
+                                <p className='titulo-col-foot'>Links</p>
                             </h2>
                             <div className='divLinks'>
                                 <Link to={'/venta'} className='link-footbar'>Ventas</Link>
@@ -47,7 +53,9 @@ function Footbar() {
                         </li>
                         {/* Redes */}
                         <li>
-                            <h2><p>Seguinos</p></h2>
+                            <h2>
+                                <p className='titulo-col-foot'>Seguinos</p>
+                            </h2>
                             <div className='cont-iconos-redes'>
                                 <a href='https://www.instagram.com/florm.bienesraices/'>
                                     <img src={IconoInstagram} alt='' className='icono-redes-foot'/>
