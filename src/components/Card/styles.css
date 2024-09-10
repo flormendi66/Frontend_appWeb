@@ -145,25 +145,10 @@
 }
 
 /* responsive */
-@media screen and (max-width: 950px) {
-    .contCard {
-        
-    }
-}
 @media screen and (max-width: 580px) {
     .contCard {
-        width: 100%;
+        width: 98%;
         margin: 0 0 20px 0;
-    }
-}
-@media screen and (max-width: 320px) {
-    .contCard {
-        grid-template-columns: auto;
-        /* se adapta al ancho del cont Padre, q es ListaProps  */
-        grid-template-rows: 50px 220px 120px 90px;
-    }
-    .card-img{
-        height: 220px;
     }
 }
 
