@@ -147,7 +147,7 @@
 /* responsive */
 @media screen and (max-width: 580px) {
     .contCard {
-        width: 98%;
+        grid-template-columns: 370px; /* ANCHO CARD */
         margin: 0 0 20px 0;
     }
 }
