@@ -152,6 +152,14 @@
     }
 }
 
+@media screen and (max-width: 390px) {
+    .contCard {
+        grid-template-columns: 100%; /* Ajusta el ancho al 100% del contenedor */
+        grid-template-rows: auto; /* Ajusta las filas según el contenido */
+        margin: 0 auto 20px auto; /* Centra la card y ajusta el margen */
+    }
+}
+
 
 
 
