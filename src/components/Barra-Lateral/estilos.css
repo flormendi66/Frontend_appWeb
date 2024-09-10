@@ -6,7 +6,9 @@
   width: 100%;
   height: auto;
   border-radius: 0 10px 10px 0;
-  border: 2px solid var(--primary-color);
+  /* border: 2px solid var(--primary-color); */
+  /* background-color: rgba(234, 231, 229, 1); */
+  background-image: url('../../Imagenes/Texturas/Textura-02.jpg');
 
 }
 /* est. 1er div */
@@ -65,7 +67,7 @@
   height: 40px;
   padding: 5px 10px;
   margin-bottom: 5px;
-  font-weight: bold;
+  font-family: 'Reboto', sans-serif;
   cursor: pointer;
   border-radius: 5px;
   border: none;
