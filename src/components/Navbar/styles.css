@@ -216,7 +216,7 @@ a, Link{
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
     /* nav Sup */
     .navSup{
         width: 100%;
@@ -228,9 +228,6 @@ a, Link{
         width: 100%;
     }
     .col1{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         width: 95%;
         height: 100%;
     }
@@ -246,12 +243,14 @@ a, Link{
     .logo {
         height: 2rem;
     }
-    .col2{
-        display: none;
-    }
     /* nav Inf */
     .cont-nav-inf{
         grid-template-columns: 1fr 1fr;
         width: 90%;
+    }
+}
+@media screen and (max-width: 450px){
+    .col2 {
+        display: none;
     }
 }
