@@ -193,7 +193,8 @@
     justify-content: start;
     align-items: center;
     width: 47.5%;
-    height: 380px;
+    min-height: 380px;
+    height: auto;
     border-radius: 20px;
     background-color: #fff;
 }
@@ -460,7 +461,7 @@
     
     }
     .p-col-1 {
-        font-size: 17px;
+        font-size: 15px;
         font-weight: 300;
         color: rgb(63, 63, 63);
     }
