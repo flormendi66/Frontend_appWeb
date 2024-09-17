@@ -182,8 +182,16 @@
         font-weight: 500;
         color: var(--primary-color);
     }
+    .cont-fav {
+        position: absolute;
+        top: 80px;
+        left: 90%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
     .div-info2{
-        margin-top: 3px;
+        margin-top: 5px;
     }
 }
 
