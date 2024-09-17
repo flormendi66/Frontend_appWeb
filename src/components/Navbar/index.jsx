@@ -30,7 +30,7 @@ function NavbarConRedes() {
                     <div className='nav-sup'>
                         <div className='cont-data-nav-sup-direcc'>
                             <img src={IconoUbicacion} alt='ubi' className='iconoInstaNew' />
-                            <p className='texto-barra-sup'>Sarmiento 2323</p>
+                            <p className='texto-barra-sup'>San lorenzo 4056</p>
                         </div>
                         <div className='cont-data-nav-sup-tel'>
                             <LocalPhoneIcon className='iconoContact' />
@@ -38,7 +38,7 @@ function NavbarConRedes() {
                         </div>
                         <div className='cont-data-nav-sup-email'>
                             <img src={IconoMail} alt='ubi' className='iconoInstaNew' />
-                            <p className='texto-barra-sup'>florm@gmail.com</p>
+                            <p className='texto-barra-sup'>florenciamendive@gmail.com</p>
                         </div>
                         <div className='cont-data-nav-sup-insta'>
                             <a href='https://www.instagram.com/florm.bienesraices/'>
@@ -65,8 +65,8 @@ function NavbarConRedes() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/destacadas'>
-                                    Destacadas
+                                <NavLink to='/emprendimientos'>
+                                    Emprendimientos
                                 </NavLink>
                             </li>
                             <li>
@@ -116,7 +116,7 @@ function NavbarConRedes() {
                                         <Link to='/alqTemp' className='link-navbar'>Alquiler Temporario</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/destacadas' className='link-navbar'>Destacadas</Link>
+                                        <Link to='/emprendimientos' className='link-navbar'>Emprendimientos</Link>
                                     </li>
                                     <li className='items-pChica'>
                                         <Link to='/favoritos' className='link-navbar'>Favoritos</Link>
