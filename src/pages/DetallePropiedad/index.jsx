@@ -10,9 +10,8 @@ import ModalVideo from '../../components/ModalVideo';
 import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import './estilos.css';
 import { formatMoney } from '../../Helps';
-
+import './estilos.css';
 
 function DetalleProp(){
 
@@ -57,7 +56,6 @@ function DetalleProp(){
     }, [dispatch, id]);
 
 
-
     return(
         <div className='contGralDetalle'>
             <div className='cont-detail'>
@@ -77,13 +75,27 @@ function DetalleProp(){
                         {
                             showTooltipVolver && <div className="tooltipVolver">{tooltipTextVolver}</div>
                         }
+
+                        {/* btn-video */}
+                        <button
+                            onClick={() => contexto.handleIsOpen()}
+                            className='btn-video'
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <OndemandVideoIcon className='icono-video' />
+                        </button>
+                        {/* msj toolTip */}
+                        {
+                            showTooltipVideo && <div className="tooltip">{tooltipTextVideo}</div>
+                        }                        
                     </div>
                     
                     {/* Titulo prop */}
                     <div className='cont-info-titulo'>
                         <div>
                             <span className='detalle-titulo-prop'>
-                                {propiedad.tituloPublicacion} -
+                                {propiedad.tituloPublicacion}
                             </span>
                         </div>
                         <div className='cont-titulo-icono-direcc'>
@@ -92,21 +104,6 @@ function DetalleProp(){
                                 {propiedad.direccion}
                             </span>
                         </div>
-                    </div>
-                    
-                    {/* Precio y Moneda */}
-                    <div className='cont-info-precio'>
-                        {
-                            propiedad.operacion?.map(o => {
-                                return(
-                                    <div key={o.operacion_id}>
-                                        <p className='detalle-precio'>{o.operacion}</p>
-                                    </div>
-                                )
-                            })
-                        }                        
-                        <p> - </p>
-                        <p className='detalle-precio'>{moneda}{formatMoney(precio)}</p>                                                
                     </div>
                 </div>
 
@@ -172,7 +169,7 @@ function DetalleProp(){
                                     <p className='p-col-1'>{propiedad.baños}</p>
                                 </div>
                                 <div className='cont-p-col-1'>
-                                    <p className='p-col-1'>Tipo:</p>
+                                    <p className='p-col-1'>Tipo Operacio:</p>
                                     {
                                         propiedad.operacion?.map(o => {
                                             return (
@@ -184,7 +181,7 @@ function DetalleProp(){
                                     }
                                 </div>
                                 <div className='cont-p-col-1'>
-                                    <p className='p-col-1'>Tipo Operacio:</p>
+                                    <p className='p-col-1'>Tipo:</p>
                                     <p className='p-col-1'>{propiedad.tipo?.nombre}</p>
                                 </div>
                             </div>
