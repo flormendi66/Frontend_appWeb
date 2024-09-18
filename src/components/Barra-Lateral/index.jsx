@@ -5,7 +5,7 @@ import './estilos.css';
 /* import FiltraPrecio from '../FIltroRangoPrecio'; */
 
 
-const BarraLateral = () => {
+const BarraLateral = ({muestraVentaAlq}) => {
 
     //estado para check venta/alq
     const [operacion, setOperacio] = useState('');
@@ -65,37 +65,40 @@ const BarraLateral = () => {
                 <p className='titulo-filtros'>Filtros Propiedades</p>
             </div>
 
-            <div className='opc-venta-alq'>
-                <div className='cont-venta-alq'>
-                <label className='label-filtro-tipo-operacion'>VENTA</label>
-                <input id='Venta'
-                        type="checkbox" 
-                        value="Venta" 
-                        checked={operacion === 'Venta'} 
-                        onChange={handleFilterChange}
-                        className='input-check-venta'
-                    />
-                <label className='label-filtro-tipo-operacion'>ALQUILER</label>
-                <input id='Alquiler'
-                        type="checkbox" 
-                        value="Alquiler" 
-                        checked={operacion === 'Alquiler'} 
-                        onChange={handleFilterChange}
-                        className='input-check-alq' 
-                />
+            {
+                muestraVentaAlq === 'true' &&
+                <div className='opc-venta-alq'>
+                    <div className='cont-venta-alq'>
+                        <label className='label-filtro-tipo-operacion'>VENTA</label>
+                        <input id='Venta'
+                            type="checkbox"
+                            value="Venta"
+                            checked={operacion === 'Venta'}
+                            onChange={handleFilterChange}
+                            className='input-check-venta'
+                        />
+                        <label className='label-filtro-tipo-operacion'>ALQUILER</label>
+                        <input id='Alquiler'
+                            type="checkbox"
+                            value="Alquiler"
+                            checked={operacion === 'Alquiler'}
+                            onChange={handleFilterChange}
+                            className='input-check-alq'
+                        />
+                    </div>
+
+                    <div className='cont-venta-alq'>
+                        <label className='label-filtro-tipo-ope-Alq-Temp'>ALQUILER TEMPORAL</label>
+                        <input id='Alquiler Temporal'
+                            type="checkbox"
+                            value="Alquiler Temporal"
+                            checked={operacion === "Alquiler Temporal"}
+                            onChange={handleFilterChange}
+                            className='input-check-alq'
+                        />
+                    </div>
                 </div>
-                
-                <div className='cont-venta-alq'>
-                <label className='label-filtro-tipo-ope-Alq-Temp'>ALQUILER TEMPORAL</label>
-                <input id='Alquiler Temporal'
-                    type="checkbox"
-                    value="Alquiler Temporal"
-                    checked={operacion === "Alquiler Temporal"}
-                    onChange={handleFilterChange}
-                    className='input-check-alq'
-                />
-                </div>
-            </div>
+            }
 
             <div className='cont-btn-filtros'>
                 <button className='boton-filtros' id='depto' onClick={(e) => handleClick(e)}>Deptos</button>

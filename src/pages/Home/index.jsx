@@ -10,9 +10,9 @@ import Paginacion from '../../components/Paginacion';
 import './styles.css';
 
 function Home() {
-    const loadding = useSelector(state => state.loading);
+    const loading = useSelector(state => state.loading);
     const allProps = useSelector(state => state.propiedades);
-    const totalPropiedades = useSelector(state => state.totPropiedades); // Suponiendo que el total viene del backend
+    const totalPropiedades = useSelector(state => state.totPropiedades); // el total viene del backend
     const dispatch = useDispatch();
 
     const [currentPage, setCurrentPage] = useState(1);  // Estado para la página actual
@@ -27,7 +27,7 @@ function Home() {
     return (
         <div>
             {
-                loadding ?
+                loading ?
                 (
                     <Loading/>
                     ) : (
@@ -39,7 +39,7 @@ function Home() {
                             <div className='cont-filtros-listaProps'>
                                 {/* filtros */}
                                 <div className='cont-barraL'>                                    
-                                    <BarraLateral />
+                                    <BarraLateral muestraVentaAlq={'true'}/>
                                 </div>                               
 
                                 {/* lista props */}
