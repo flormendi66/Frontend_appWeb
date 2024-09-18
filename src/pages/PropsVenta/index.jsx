@@ -12,8 +12,7 @@ import './estilos.css';
 function PropsVenta() {
 
     const loading = useSelector(state => state.loading);
-    const props = useSelector(state => state.propiedades);
-    const totalPropiedades = useSelector(state => state.totPropiedades); // el total viene del backend    
+    const props = useSelector(state => state.propiedades);   
     const [currentPage, setCurrentPage] = useState(1);  // Estado para la página actual
     const propiedadesPorPagina = 20;  // Definimos el límite de propiedades por página
     const dispatch = useDispatch();
@@ -49,7 +48,7 @@ function PropsVenta() {
                                         allProps={soloEnVenta}
                                         currentPage={currentPage} 
                                         onPageChange={setCurrentPage} 
-                                        totalPropiedades={totalPropiedades}
+                                        totalPropiedades={soloEnVenta.length}
                                     />
                                 </div>
                             </div> 
