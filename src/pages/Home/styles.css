@@ -6,18 +6,23 @@
   height: auto;
   margin: 0;
   background-color: rgba(234, 231, 229, 1);
-  /* background-image: url('../../Imagenes/Texturas/Textura-05.jpg'); */
 }
-.cont-filtros-listaProps{
+.cont-filtros-listaProps {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  height: auto; /* Asegúrate de que este contenedor pueda crecer */
 }
-.cont-barraL{  
-  width: 18%;
+.cont-barraL {
+  position: -webkit-sticky; /* Soporte para Safari */
+  position: sticky;
+  top: 80px; /* Ajusta este valor según la altura de la navbar */
+  z-index: 100;
+  align-self: flex-start; /* Para que la barra se mantenga alineada al principio */
 }
-.cont-listaProps{
+
+.cont-listaProps {
   width: 85%;
 }
 
