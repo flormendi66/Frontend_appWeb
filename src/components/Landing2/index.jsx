@@ -23,9 +23,9 @@ function LandingPage2() {
                     <Link to={'/alquiler'}>
                         <button className='btn-landing'>Quiero Alquilar</button>
                     </Link>
-                    <Link></Link>
-                    
-                    <button className='btn-landing'>Quiero Vender</button>
+                    <Link to={'/vender'}>
+                        <button className='btn-landing'>Quiero Vender</button>
+                    </Link>
                 </div>
             </div>
 

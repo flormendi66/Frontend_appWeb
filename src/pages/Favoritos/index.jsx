@@ -4,13 +4,13 @@ import ListaPropiedades from '../../components/ListaPropiedades';
 import './estilos.css'
 
 function ListaFavoritos() {
-    let listaFav = JSON.parse(localStorage.getItem('favorites'));
-    const allProps = useSelector(state => state.propiedades);
+    let listaFav = JSON.parse(localStorage.getItem('favorites')) || [];
+    const allProps = useSelector(state => state.propiedades); console.log("fav:", listaFav)
     let newArrayFav = [];
 
 
     //busca cada prop q tengo en Fav an el array de props global
-    for(let i =0; i<listaFav.length; i++){
+    for(let i =0; i < listaFav.length; i++){
         for(let j=0; j<allProps.length; j++){
             if(allProps[j].id === listaFav[i]){
                 newArrayFav.push(allProps[j]);

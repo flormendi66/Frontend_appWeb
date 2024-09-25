@@ -1,8 +1,12 @@
 .cont-gralFavoritos{
+    min-height: 90vh;
+    position: relative;
+    top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:chocolate;
+    background-color:var(--color-gris);
+    margin-bottom: 80px;
 }
 .cont-titulo-listaFav{
     width: 80%;
