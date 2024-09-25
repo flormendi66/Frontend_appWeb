@@ -1,5 +1,6 @@
 import React  from 'react'
 import logo from '../../Imagenes/LogoHome.png';
+import { Link } from 'react-router-dom';
 import './estilos.css';
 
 function LandingPage2() {
@@ -16,8 +17,14 @@ function LandingPage2() {
             {/* cont texto 2 */}            
             <div className='cont-inf'>
                 <div className="sub-cont-infe right-slide">
-                    <button className='btn-landing'>Quirero Comprar</button>
-                    <button className='btn-landing'>Quiero Alquilar</button>
+                    <Link to={'/venta'}>
+                        <button className='btn-landing'>Quirero Comprar</button>
+                    </Link>
+                    <Link to={'/alquiler'}>
+                        <button className='btn-landing'>Quiero Alquilar</button>
+                    </Link>
+                    <Link></Link>
+                    
                     <button className='btn-landing'>Quiero Vender</button>
                 </div>
             </div>

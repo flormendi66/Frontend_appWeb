@@ -104,33 +104,36 @@ function Home() {
 
                         {/* contenedor filtros y lista props */}
                         <div className='cont-titulo-filtros-props'>
-                    <div className='cont-titulo-conoce-propiedades'>
-                        <h2 className='titulo-conoce-propiedades'>Conocé nuestras Propiedades</h2>
-                    </div>
-                    <div className='cont-filtros-listaProps'>
-                    <div className='cont-barraL'>
-                                <BarraLateral
-                                    muestraVentaAlq={'true'}
-                                    limit={limit}  // Aquí pasamos el valor de limit al componente BarraLateral
-                                    offset={offset} // También pasamos el offset
-                                    setCurrentPage={setCurrentPage}
-                                    setOperacion={setOperacion}
-                                    setTipoPropiedad={setTipoPropiedad}  // Nuevo prop para manejar tipoPropiedad
-                                />
+                            <div className='cont-titulo-conoce-propiedades'>
+                                <h2 className='titulo-conoce-propiedades'>Conocé nuestras Propiedades</h2>
                             </div>
+                            <div className='cont-filtros-listaProps'>
+                                    <div className='cont-barraL'>
+                                        <BarraLateral
+                                            muestraVentaAlq={'true'}
+                                            limit={limit}  // Aquí pasamos el valor de limit al componente BarraLateral
+                                            offset={offset} // También pasamos el offset
+                                            setCurrentPage={setCurrentPage}
+                                            setOperacion={setOperacion}
+                                            setTipoPropiedad={setTipoPropiedad}  // Nuevo prop para manejar tipoPropiedad
+                                        />
+                                    </div>
 
-                        <div className='cont-listaProps'>
-                            <ListaPropiedades allProps={allProps} id='listaProps' />
-                            <Paginacion
-                                allProps={allProps}
-                                currentPage={currentPage}
-                                onPageChange={setCurrentPage}
-                                totalPropiedades={totalPropiedades}
-                                propiedadesPorPagina={propiedadesPorPagina}
-                            />
+                                    <div className='cont-listaProps'>
+                                        <ListaPropiedades allProps={allProps} id='listaProps' />
+                                        {
+                                            allProps[0] &&
+                                            <Paginacion
+                                            allProps={allProps}
+                                            currentPage={currentPage}
+                                            onPageChange={setCurrentPage}
+                                            totalPropiedades={totalPropiedades}
+                                            propiedadesPorPagina={propiedadesPorPagina}
+                                        />
+                                        }
+                                    </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
                         {/* botón WhatsApp */}
                         <WhatsAppButton />

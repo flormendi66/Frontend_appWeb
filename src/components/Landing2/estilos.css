@@ -106,6 +106,7 @@
     /* border: 1px solid var(--primary-color); */
     border-radius: 30px;
     background-color: var(--color-negro-logo);
+    cursor: pointer;
 }
 
 /* reponsive */
