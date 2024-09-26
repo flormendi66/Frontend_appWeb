@@ -66,7 +66,7 @@ function CardFavorito({ id, direccionF, cantCocheras, dormitorios, operacion, im
                             {/* Barrio: {ubicacion.barrio} | */} {direccionF}
                         </span>
                     </div>
-                    <p className='p-precio-card-fav'>PRECIO: {operacion[0].precios[0].moneda} {formatMoney(operacion[0].precios[0].precio)}</p>
+                    <p className='p-precio-card-fav'>{operacion[0].precios[0].moneda} {formatMoney(operacion[0].precios[0].precio)}</p>
                 </div>
                 {/* cont-info-inferior */}
                 <div className='cont-info-inferior'>
