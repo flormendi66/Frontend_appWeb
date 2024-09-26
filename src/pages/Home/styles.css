@@ -215,6 +215,9 @@
   .cont-listaProps{
     width: 95%;
   }
+  .titulo-conoce-propiedades{
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 400px){
   .subCont-textos{
