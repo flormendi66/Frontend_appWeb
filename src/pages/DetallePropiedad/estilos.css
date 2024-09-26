@@ -1,4 +1,6 @@
 .contGralDetalle{
+    position: relative;
+    top: 80px;
     width: 100%;
     height: auto;
     display: flex;
@@ -8,6 +10,7 @@
     /* background-image: url('../../Imagenes/Mar-Del-Plata.webp'); */
     /* background-size: cover; */ /* Hace que la imagen de fondo cubra todo el div */
     /* background-position: center; */
+    margin-bottom: 80px;
 }
 .cont-detail{
     width: 95%;

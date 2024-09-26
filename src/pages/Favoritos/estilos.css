@@ -7,11 +7,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: var(--color-gris);
+    text-align: center;    
     margin-bottom: 80px;
+    background-color: var(--color-gris);
 }
-
 @media screen and (max-width:500px){
     .titulo-page-fav{
         font-size: 15px;

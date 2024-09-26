@@ -12,13 +12,29 @@ import { Link } from 'react-router-dom';
 
 function CardFavorito({ id, direccionF, cantCocheras, dormitorios, operacion, imagenes, tituloPublicacion, ambientes, unidadMedida, tipo}) {
 
+    //estado para el hover
+    const [showDetail, setShowDetail] = useState(false);
 
     return (
         <div className='card-fav'>
             {/* img + fav */}
             <div className='cont-img-fav' >
                 <Link to={`/detalle/${id}`} className='img-fav'>
-                    <img src={imagenes[0].original} alt='not found' className='img-fav' />
+                    {/* img + animacion + abre detalle */}
+                    <div
+                        onMouseEnter={() => setShowDetail(true)}
+                        onMouseLeave={() => setShowDetail(false)} className='img-fav'
+                    >
+                        {/* imagen */}
+                        <div className='img-fav'>
+                            <img src={imagenes[0].original} alt='not found' className='img-fav' />
+                        </div>
+
+                        {/* msj detalle si hay hover */}
+                        <div className={`detail ${showDetail ? 'show' : ''}`}>
+                            <p className='palabra-abre-detalle'>Detalle</p>
+                        </div>
+                    </div>
                 </Link>
                 {/* btn fav */}
                 <div className='cont-btn-card-fav'>
@@ -36,7 +52,7 @@ function CardFavorito({ id, direccionF, cantCocheras, dormitorios, operacion, im
                         />
                 </div>
             </div>
-            
+            {/* Data prop */}
             <div className='cont-data-prop-fav'>
                 {/* descripcion */}
                 <div className='cont-titulo-card-fav'>

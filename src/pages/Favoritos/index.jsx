@@ -18,10 +18,7 @@ function FavoritosPage() {
 
     return (
         <div className='cont-page-favoritos'>
-            <h1 className='titulo-page-fav'>Tus propiedades favoritas</h1>
-            <div className='cont-props-fav'>
-                <ListaFavoritos allProps={fav} />
-            </div>
+            <ListaFavoritos allProps={fav} />            
         </div>
     )
 }
