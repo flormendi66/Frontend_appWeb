@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import NoHayProps from '../NoHayProps';
-import CardFavorito from '../CardFavorito';
+//import CardFavorito from '../CardFavorito';
 import Loading from '../Loading';
 import './estilos.css';
+import Card from '../Card';
 
 function ListaFavoritos({allProps}) {
 
@@ -17,37 +18,41 @@ function ListaFavoritos({allProps}) {
 
     return (
         <div className='cont-listaProps-fav'>
-            <h1>Propiedades Favoritas</h1>
+            <h1 className='titulo-lista-props-fav'>Propiedades Favoritas</h1>
             {
                 loading ? (
                     <>
                         <Loading/>
                     </>
                 ) : (
-                    allProps[0] ?
-                    allProps.map(p => {
-                        return (
-                            <div className='cont-card-listaFav' key={p.id}>
-                                <CardFavorito 
-                                    key={p.id}
-                                    id={p.id}
-                                    direccionF={p.direccionF}
-                                    cantCocheras={p.cantCocheras}
-                                    operacion={p.operacion}
-                                    imagenes={p.imagenes}
-                                    tituloPublicacion={p.tituloPublicacion}
-                                    ambientes={p.ambientes}
-                                    dormitorios={p.dormitorios}
-                                    unidadMedida={p.unidadMedida}
-                                    tipo={p.tipo}
-                                />
-                            </div>
-                        )
-                    }) : (
-                        <div className='no-props'>
-                            <NoHayProps/>
-                        </div>
-                    )
+                    <div className='cont-card-lista-props'>                        
+                        {
+                            allProps[0] ?
+                            allProps.map(p => {
+                                return (
+                                    <div className='cont-card-Fav-listaProps' key={p.id}>
+                                        <Card 
+                                            key={p.id}
+                                            id={p.id}
+                                            direccionF={p.direccionF}
+                                            cantCocheras={p.cantCocheras}
+                                            operacion={p.operacion}
+                                            imagenes={p.imagenes}
+                                            tituloPublicacion={p.tituloPublicacion}
+                                            ambientes={p.ambientes}
+                                            dormitorios={p.dormitorios}
+                                            unidadMedida={p.unidadMedida}
+                                            tipo={p.tipo}
+                                        />
+                                    </div>
+                                )
+                            }) : (
+                                <div className='no-props'>
+                                    <NoHayProps/>
+                                </div>
+                            )
+                        }
+                    </div>
                 )
             }
             
