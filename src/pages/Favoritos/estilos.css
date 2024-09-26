@@ -1,23 +1,19 @@
-.cont-gralFavoritos{
-    min-height: 90vh;
+.cont-page-favoritos{
     position: relative;
     top: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:var(--color-gris);
-    margin-bottom: 80px;
-}
-.cont-titulo-listaFav{
-    width: 80%;
-    display: flex;
+    width: 100%;
+    min-height: 90vh;
+    display: flexbox;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: var(--color-gris);
+    margin-bottom: 80px;
 }
 
 @media screen and (max-width:500px){
-    .cont-titulo-listaFav{
+    .titulo-page-fav{
         font-size: 15px;
         text-align: center;
     }

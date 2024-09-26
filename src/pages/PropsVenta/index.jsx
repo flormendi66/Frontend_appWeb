@@ -22,6 +22,12 @@ function PropsVenta() {
     const limit = propiedadesPorPagina;    
     const offset = (currentPage - 1) * limit;
 
+    //efecto para iniciar la Pag desd la parte SUPERIOR
+    useEffect(() => {
+        // Desplaza la página hacia la parte superior cuando el componente se monta
+        window.scrollTo(0, 0);
+      }, []); // El array vacío asegura que se ejecute solo al montar el componente
+    
     useEffect(()=>{
         dispatch(getProps(limit, offset, "Venta", tipoPropiedad));
     },[dispatch, limit, offset, tipoPropiedad]);

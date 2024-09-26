@@ -9,11 +9,11 @@ import PropsVenta from './pages/PropsVenta';
 import PropsAlquiler from './pages/PropsAlquiler';
 import Contactanos from './pages/Contactanos';
 import Nosotros from './pages/Nosotros';
-import ListaFavoritos from './pages/Favoritos';
 import { InmobiliariaProvider } from './Context';
 import ModalVideo from './components/ModalVideo';
 import Emprendimientos from './pages/Emprendimientos';
 import QuieroVenderPage from './pages/QuieroVender';
+import FavoritosPage from './pages/Favoritos';
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
           <Route path='/emprendimientos' element={<Emprendimientos />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contactanos />} />
-          <Route path='/favoritos' element={<ListaFavoritos />} />
+          <Route path='/favoritos' element={<FavoritosPage />} />
 
           {/* rutas para el desarrollador */}
           <Route path='/card' element={<Card />} />
