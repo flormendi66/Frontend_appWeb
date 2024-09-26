@@ -70,6 +70,12 @@ function FormularioQuieroVender() {
         e.target.style.height = `${e.target.scrollHeight}px`;  // Ajusta la altura al contenido
     };
 
+    //efecto para iniciar la Pag desd la parte SUPERIOR
+    useEffect(() => {
+        // Desplaza la página hacia la parte superior cuando el componente se monta
+        window.scrollTo(0, 0);
+    }, []);
+
     useEffect(() => {
         const textarea = document.querySelector('textarea');
         if (textarea) {
