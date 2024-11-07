@@ -90,7 +90,7 @@ function Home() {
                                                 <br />
                                                 Creemos en la importancia de caminar juntos hacia el cumplimiento de tus objetivos, para que sientas nuestro respaldo en cada paso del proceso.
                                             </p>
-                                            <Link to={'/vender'}>
+                                            <Link to={'/contacto'}>
                                                 <button className='btn-contactanos-home'>Contactanos</button>
                                             </Link>                                            
                                         </div>
@@ -134,12 +134,12 @@ function Home() {
                                         {
                                             allProps[0] &&
                                             <Paginacion
-                                            allProps={allProps}
-                                            currentPage={currentPage}
-                                            onPageChange={setCurrentPage}
-                                            totalPropiedades={totalPropiedades}
-                                            propiedadesPorPagina={propiedadesPorPagina}
-                                        />
+                                                allProps={allProps}
+                                                currentPage={currentPage}
+                                                onPageChange={setCurrentPage}
+                                                totalPropiedades={totalPropiedades}
+                                                propiedadesPorPagina={propiedadesPorPagina}
+                                            />
                                         }
                                     </div>
                             </div>
