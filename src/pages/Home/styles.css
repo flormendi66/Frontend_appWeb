@@ -20,14 +20,6 @@
   background-color: transparent;
   transition: top 0.3s ease-in-out; /* Transición suave */
 }
-/* para fijar las los textos */
-.fixed {
-  position: fixed;
-  top: 0; /* Fijo en la parte superior */
-  left: 0;
-  right: 0;
-  z-index: 10; /* Asegura que el texto esté por encima del fondo */
-}
 .cont-filtros-listaProps {
   width: 100%;
   display: flex;
@@ -38,19 +30,19 @@
   z-index: 100;
   background-color: var(--color-gris);
 }
-.cont-barraL {
-  position: -webkit-sticky; /* Soporte para Safari */
-  position: sticky;
-  margin-left: 5px;
-  margin-bottom: 90px;
-  z-index: 100;
-}
 .texto-somos{
   font-size: 30px;
   color: var(--primary-color);
 }
 .logoTexto{
   height: 8rem;
+}
+.cont-texto-imagenes{
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-negro-logo);
 }
 .subCont-textos{
   width: 90%;
@@ -59,7 +51,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin-top: 200px;
+  margin-top: 50px;
 }
 .texto-sup{
   font-size: 25px;
@@ -80,6 +72,7 @@
   cursor: pointer;
   box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
   animation: pulse 2s infinite;
+  margin-bottom: 80px;
 }
 @keyframes pulse {
   0% {
@@ -94,46 +87,6 @@
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
   }
-}
-.cont-texto-imagenes{
-  background-color: var(--color-negro-logo);
-}
-.cont-imgenes-fondo{
-  position: relative;
-  width: 100%;
-  height: 890px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-negro-logo);
-  margin-top: 650px;
-}
-.cont-sup-img,
-.cont-inf-img {
-  width: 100%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cont-fondo-img {
-  width: 50%;
-  height: 100%;
-}
-.img-fondo {
-  width: 100%;
-  height: 100%;
-  
-}
-.cont-fondo-oscuro{
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: var(--color-negro-logo);
 }
 .cont-titulo-filtros-props{
   width: 100%;
