@@ -1,5 +1,6 @@
 import { 
-    GET_PROPERTY, GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING,  RESET_PROPERTY,   
+    GET_PROPERTY, GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING,  RESET_PROPERTY,
+    RESET_PROPS,   
 } from "../Actions/ActionsType";
 
 const initialState = {
@@ -41,7 +42,12 @@ export default function rootReducer (state = initialState, action) {
                 ...state,
                 isOpenModalPicture: !state.isOpenModalPicture,
             };
-        default:
+        case RESET_PROPS:
+            return{
+                ...state,
+                propiedades: []
+            }
+            default:
             return state;
     }
 };

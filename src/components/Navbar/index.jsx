@@ -20,8 +20,8 @@ function NavbarConRedes() {
     return (
         <nav>
             <div className='cont-principal-nav'>
-                <div className='cont-logo'>
-                    {/* logo */}
+                {/* logo */}
+                <div className='cont-logo'>                    
                     <NavLink to='/' >
                         <img src={Logo} alt='img not found' className='logo-nav' />
                     </NavLink>
@@ -65,8 +65,8 @@ function NavbarConRedes() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/emprendimientos'>
-                                    Emprendimientos
+                                <NavLink to='/alqtemp'>
+                                    Alq. temporarios
                                 </NavLink>
                             </li>
                             <li>
@@ -116,7 +116,7 @@ function NavbarConRedes() {
                                         <Link to='/alqTemp' className='link-navbar'>Alquiler Temporario</Link>
                                     </li> */}
                                     <li className='items-pChica'>
-                                        <Link to='/emprendimientos' className='link-navbar'>Emprendimientos</Link>
+                                        <Link to='/alqTemp' className='link-navbar'>Alq. temporario</Link>
                                     </li>
                                     <li className='items-pChica'>
                                         <Link to='/favoritos' className='link-navbar'>Favoritos</Link>

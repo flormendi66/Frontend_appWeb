@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProps, resetPropiedades } from '../../Redux/Actions';
+import { getProps, resetProperty, resetPropiedades } from '../../Redux/Actions';
 import Loading from '../../components/Loading';
 import BarraLateral from '../../components/Barra-Lateral';
 import ListaPropiedades from '../../components/ListaPropiedades';
@@ -8,7 +8,7 @@ import WhatsAppButton from '../../components/BotonWhastApp';
 import Paginacion from '../../components/Paginacion';
 
 
-function PropsAlquiler() {
+function PropsAlqTemp() {
 
     const loading = useSelector(state => state.loading);
     //estado para controlar la primera carga
@@ -19,10 +19,7 @@ function PropsAlquiler() {
     const allProps = useSelector(state => state.propiedades);
     const totalPropiedades = useSelector(state => state.totPropiedades);
     const dispatch = useDispatch();
-    
-    // Almacena los valores anteriores de operación y tipo para detectar cambios
-    const prevFilters = useRef({ operacion: '', tipoPropiedad: 'todas' });
-    
+
     const propiedadesPorPagina = 12;
     const limit = propiedadesPorPagina;    
     const offset = (currentPage - 1) * limit;
@@ -35,28 +32,26 @@ function PropsAlquiler() {
     
     useEffect(() => {
         if (initialLoad) {
-            dispatch(getProps(limit, offset, "Alquiler", tipoPropiedad));
+            dispatch(getProps(limit, offset, "Alquiler temporario", tipoPropiedad));
             setInitialLoad(false);  // Esto previene futuras ejecuciones
-        }
-        if(!initialLoad){
+        }else{
             dispatch(getProps(limit, offset, "Venta", tipoPropiedad));
         }
-        
-        if (
-                tipoPropiedad !== prevFilters.current.tipoPropiedad
-            ) {
-                dispatch(getProps(12, 0,  tipoPropiedad));
-                prevFilters.current = { tipoPropiedad }; // Actualiza los valores anteriores
-            }
     
         return () => {
             dispatch(resetPropiedades());
         };
-    }, [initialLoad, limit, offset, tipoPropiedad]); 
+    }, [initialLoad, limit, offset, tipoPropiedad]);
 
 
     return (
-        
+        <div>
+            {
+                loading ? (
+                    <>
+                        <Loading />
+                    </>
+                ) : (
                     <div className='cont-Venta'>
                         {/* contenedor filtros y lista props */}
                         <div className='cont-titulo-y-props-venta'>
@@ -99,8 +94,10 @@ function PropsAlquiler() {
                         {/* botón WhatsApp */}
                         <WhatsAppButton />
                     </div>
-                
+                )
+            }
+        </div>
     )
 }
 
-export default PropsAlquiler;
+export default PropsAlqTemp;

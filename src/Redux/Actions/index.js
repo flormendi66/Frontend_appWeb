@@ -1,6 +1,7 @@
 import axios from "axios";
 import { 
-    GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, MUESTRA_DESTACADAS, RESET_PROPERTY,   
+    GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, MUESTRA_DESTACADAS, 
+    RESET_PROPS, RESET_PROPERTY,
 } from "./ActionsType";
 import { actual } from "../../urls";
 
@@ -60,3 +61,10 @@ export const isOpenModalPicture = () => {
         dispatch({type: IS_OPEN_MODAL_PICTURE});
     }
 };
+
+//reset propiedades
+export const resetPropiedades = () => {
+    return function(dispatch){
+        dispatch({type: RESET_PROPS});
+    }
+}
