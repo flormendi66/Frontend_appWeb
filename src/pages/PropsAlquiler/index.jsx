@@ -38,15 +38,21 @@ function PropsAlquiler() {
             {
                 loading ? (
                     <>
-                        <Loading/>
+                        <Loading />
                     </>
                 ) : (
-                    <div className='cont-prop-Venta'>
+                    <div className='cont-Venta'>
                         {/* contenedor filtros y lista props */}
-                            <div className='cont-titulo-props-venta'>
-                                <div className='cont-filtros-listaProps-venta'>
-                                    <div className='cont-barraL venta'>
-                                        <BarraLateral
+                        <div className='cont-titulo-y-props-venta'>
+                            {/* titulo */}
+                            <div className='cont-titulo-venta'>
+                                <p className='titulo-props-venta'>Propiedades en Alquiler</p>
+                            </div>
+
+                            {/* barra lat */}
+                            <div className='cont-barraLateral-Y-listaProps-venta'>
+                                <div className='cont-barraLateral-venta' >
+                                    <BarraLateral
                                             muestraVentaAlq={'false'}
                                             limit={limit}  // Aquí pasamos el valor de limit al componente BarraLateral
                                             offset={offset} // También pasamos el offset
@@ -54,26 +60,24 @@ function PropsAlquiler() {
                                             /* setOperacion={setOperacion} */
                                             setTipoPropiedad={setTipoPropiedad}  // Nuevo prop para manejar tipoPropiedad
                                         />
-                                    </div>
-
-                                    <div className='cont-listaProps'>
-                                        <div className='cont-titulo-conoce-propiedades'>
-                                            <p className='titulo-props-venta'>Propiedades en Alquiler</p>
-                                        </div>
-                                        <ListaPropiedades allProps={allProps} id='listaProps' />
-                                        {
-                                            allProps[0] &&
-                                            <Paginacion
+                                </div>
+                                {/* lista props y pag */}
+                                <div className='cont-listaProps-Y-paginacion-venta'>
+                                    <ListaPropiedades allProps={allProps} id='listaProps' />
+                                    {/* Paginación */}
+                                    {
+                                        allProps[0] &&
+                                        <Paginacion
                                             allProps={allProps}
                                             currentPage={currentPage}
                                             onPageChange={setCurrentPage}
                                             totalPropiedades={totalPropiedades}
                                             propiedadesPorPagina={propiedadesPorPagina}
                                         />
-                                        }
-                                    </div>
+                                    }
                                 </div>
                             </div>
+                        </div>
 
                         {/* botón WhatsApp */}
                         <WhatsAppButton />
