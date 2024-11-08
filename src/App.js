@@ -14,6 +14,7 @@ import ModalVideo from './components/ModalVideo';
 import Emprendimientos from './pages/Emprendimientos';
 import QuieroVenderPage from './pages/QuieroVender';
 import FavoritosPage from './pages/Favoritos';
+import PropsAlqTemp from './pages/AlqTemp';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path='/venta' element={<PropsVenta />} />
           <Route path='/alquiler' element={<PropsAlquiler />} />
           <Route path='/vender' element={<QuieroVenderPage/>} />
-          <Route path='/emprendimientos' element={<Emprendimientos />} />
+          <Route path='/alqTemp' element={<PropsAlqTemp />} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contactanos />} />
           <Route path='/favoritos' element={<FavoritosPage />} />

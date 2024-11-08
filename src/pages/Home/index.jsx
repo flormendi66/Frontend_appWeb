@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProps, resetPropiedades } from '../../Redux/Actions';
+import { getProps } from '../../Redux/Actions';
 import ListaPropiedades from '../../components/ListaPropiedades';
 import LandingA from '../../components/LandingA';
 import Loading from '../../components/Loading';
@@ -8,32 +8,31 @@ import BarraLateral from '../../components/Barra-Lateral';
 import WhatsAppButton from '../../components/BotonWhastApp';
 import Paginacion from '../../components/Paginacion';
 import LandingB from '../../components/LandingB';
-import './styles.css';
 import LandingC from '../../components/LandingC';
+import './styles.css';
 
 function Home() {
     const loading = useSelector(state => state.loading);
     const [operacion, setOperacion] = useState('');
     const [tipoPropiedad, setTipoPropiedad] = useState('todas');
+    const [precioMin, setPrecioMin] = useState(10000);
+    const [precioMax, setPrecioMax] = useState(1000000);
     const [currentPage, setCurrentPage] = useState(1);
     const allProps = useSelector(state => state.propiedades);
     const totalPropiedades = useSelector(state => state.totPropiedades);
     const dispatch = useDispatch();
-    //const prevFilters = useRef({ operacion: '', tipoPropiedad: 'todas' });
     const propiedadesPorPagina = 12;
-    const limit = propiedadesPorPagina;    
+    const limit = propiedadesPorPagina;
     const offset = (currentPage - 1) * limit;
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    // Efecto para manejar la paginación y los filtros
     useEffect(() => {
-        dispatch(getProps(limit, offset, operacion, tipoPropiedad));
-        return () => {
-            dispatch(resetPropiedades());
-        };
-    }, [limit, offset, operacion, tipoPropiedad, dispatch]);
+        dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax));
+    }, [dispatch, limit, offset, operacion, tipoPropiedad, precioMin, precioMax]);
 
     return (
         <div>
@@ -46,13 +45,17 @@ function Home() {
                     <LandingC />
                     <div className='cont-barraLateral-Y-listaProps'>
                         <div className='cont-barraLateral'>
-                            <BarraLateral
-                                soloVenta={'true'}
-                                soloAlq={'true'}
-                                setCurrentPage={setCurrentPage}
-                                setOperacion={setOperacion}
-                                setTipoPropiedad={setTipoPropiedad}
-                            />
+                        <BarraLateral
+                            muestraVentaAlq={'true'}
+                            soloAlq={'true'}
+                            setCurrentPage={setCurrentPage}
+                            setOperacion={setOperacion}
+                            setTipoPropiedad={setTipoPropiedad}
+                            precioMin={precioMin}
+                            setPrecioMin={setPrecioMin}
+                            precioMax={precioMax}
+                            setPrecioMax={setPrecioMax}
+                        />
                         </div>
                         <div className='cont-listaProps-Y-paginacion'>
                             <h1 className='titulo-lista-props'>Conocé nuestras Propiedades</h1>

@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProps, resetPropiedades } from '../../Redux/Actions';
-import Loading from '../../components/Loading';
+import { getProps } from '../../Redux/Actions';
 import BarraLateral from '../../components/Barra-Lateral';
 import ListaPropiedades from '../../components/ListaPropiedades';
 import WhatsAppButton from '../../components/BotonWhastApp';
@@ -9,39 +8,28 @@ import Paginacion from '../../components/Paginacion';
 import './estilos.css';
 
 function PropsVenta() {
-    const loading = useSelector(state => state.loading);
-    const [initialLoad, setInitialLoad] = useState(true);
+
+    const [operacion, setOperacion] = useState('Venta');
     const [tipoPropiedad, setTipoPropiedad] = useState('todas');
+    const [precioMin, setPrecioMin] = useState(10000);
+    const [precioMax, setPrecioMax] = useState(1000000);
     const [currentPage, setCurrentPage] = useState(1);
     const allProps = useSelector(state => state.propiedades);
     const totalPropiedades = useSelector(state => state.totPropiedades);
     const dispatch = useDispatch();
-    const prevFilters = useRef({ operacion: '', tipoPropiedad: 'todas' });
     const propiedadesPorPagina = 12;
-    const limit = propiedadesPorPagina;    
+    const limit = propiedadesPorPagina;
     const offset = (currentPage - 1) * limit;
 
+    //efecto para iniciar la Pag desd la parte SUPERIOR
     useEffect(() => {
+        // Desplaza la página hacia la parte superior cuando el componente se monta
         window.scrollTo(0, 0);
-    }, []);
-
-    useEffect(() => {
-        if (initialLoad) {
-            dispatch(getProps(limit, offset, "Venta", tipoPropiedad));
-            setInitialLoad(false);
-        } else {
-            dispatch(getProps(limit, offset, "Venta", tipoPropiedad));
-        }
-
-        if (tipoPropiedad !== prevFilters.current.tipoPropiedad) {
-            dispatch(getProps(12, 0, tipoPropiedad));
-            prevFilters.current = { tipoPropiedad };
-        }
-
-        return () => {
-            dispatch(resetPropiedades());
-        };
-    }, [initialLoad, limit, offset, tipoPropiedad, dispatch]);
+    }, []); // El array vacío asegura que se ejecute solo al montar el componente
+    
+    useEffect(()=>{
+        dispatch(getProps(limit, offset, operacion, tipoPropiedad, precioMin, precioMax));
+    },[dispatch, limit, offset, operacion, precioMax, precioMin, tipoPropiedad]);
 
     return (
         <div className='cont-Venta'>
@@ -51,13 +39,17 @@ function PropsVenta() {
                 </div>
                 <div className='cont-barraLateral-Y-listaProps-venta'>
                     <div className='cont-barraLateral-venta'>
-                        <BarraLateral
-                            muestraVentaAlq={'false'}
-                            limit={limit}
-                            offset={offset}
-                            setCurrentPage={setCurrentPage}
-                            setTipoPropiedad={setTipoPropiedad}
-                        />
+                    <BarraLateral
+                                muestraVentaAlq={'false'}
+                                soloAlq={'false'}
+                                setCurrentPage={setCurrentPage}
+                                setOperacion={setOperacion}
+                                setTipoPropiedad={setTipoPropiedad}
+                                precioMin={precioMin}
+                                setPrecioMin={setPrecioMin}
+                                precioMax={precioMax}
+                                setPrecioMax={setPrecioMax}
+                            />
                     </div>
                     <div className='cont-listaProps-Y-paginacion-venta'>
                         <ListaPropiedades allProps={allProps} id='listaProps' />
