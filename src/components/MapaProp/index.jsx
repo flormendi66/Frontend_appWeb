@@ -1,40 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import React from 'react';
+import './estilos.css'; // Archivo CSS para los estilos del mapa
 
-const MapProp = ({ geoLat, geoLong }) => {
-    const API_KEY = process.env.REACT_APP_API_GOOGLE_MAP;
+const MapProp = ({ direccionProp }) => {
 
-    const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: API_KEY // Reemplaza con tu API Key de Google Maps
-    });
+    //apikey google map
+    const apiKey = process.env.REACT_APP_API_GOOGLE_MAP;
 
-    // Inicializamos el estado de coordenadas en null
-    const [coordinates, setCoordinates] = useState(null);
-
-    useEffect(() => {
-        // Convertimos geoLat y geoLong a números flotantes si son válidos
-        const lat = parseFloat(geoLat);
-        const lng = parseFloat(geoLong);
-
-        if (!isNaN(lat) && !isNaN(lng)) {
-            setCoordinates({ lat, lng });
-        }
-    }, [geoLat, geoLong]); // Dependemos de geoLat y geoLong
-
-    if (!isLoaded) return <div>Loading...</div>;
+    // Función para generar la URL de Google Maps con la dirección proporcionada
+    const generateMapUrl = () => {
+        const baseUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}`;
+        const encodedAddress = encodeURIComponent(direccionProp);
+        return `${baseUrl}&q=${encodedAddress}`;
+    };
 
     return (
-        <GoogleMap
-            center={coordinates || { lat: -38.0257007, lng: -57.5616034 }}  // Usamos coordenadas predeterminadas si coordinates es null
-            zoom={15}
-            mapContainerStyle={{ width: '100%', height: '400px', position: 'relative' }}
-        >
-            {coordinates && (
-                <Marker
-                    position={coordinates}  // Solo mostramos el marcador cuando coordinates es válido
-                />
-            )}
-        </GoogleMap>
+        <div className="map-container">
+            <iframe
+                title="Map"
+                className="map"
+                src={generateMapUrl()}
+                allowFullScreen
+            ></iframe>
+        </div>
     );
 };
 

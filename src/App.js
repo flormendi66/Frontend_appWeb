@@ -11,7 +11,6 @@ import Contactanos from './pages/Contactanos';
 import Nosotros from './pages/Nosotros';
 import { InmobiliariaProvider } from './Context';
 import ModalVideo from './components/ModalVideo';
-import Emprendimientos from './pages/Emprendimientos';
 import QuieroVenderPage from './pages/QuieroVender';
 import FavoritosPage from './pages/Favoritos';
 import PropsAlqTemp from './pages/AlqTemp';
