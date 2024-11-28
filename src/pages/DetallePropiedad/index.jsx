@@ -193,7 +193,7 @@ function DetalleProp(){
                 {/* google map */}
                 <div className='cont-map'>
                     <p className='p-titulo-mapa'>Ubicacion Propiedad</p>
-                    <MapProp direccionProp={propiedad.direccion} />
+                    <MapProp lat={propiedad.geoLat} lng={propiedad.geoLong} />
                 </div>
 
                 {/* Modal Video */}                
