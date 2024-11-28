@@ -10,7 +10,7 @@ function LandingPage2() {
             {/* cont logo */}
             <div className='cont-logo-landing'>
                 <div className='sub-cont-logo-landing sub-cont-sup left-slide'>
-                    <img src={logo} alt='' className='logo-landing'/>
+                    <img src={logo} alt='not found' className='logo-landing'/>
                 </div>
             </div>            
             

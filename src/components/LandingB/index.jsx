@@ -8,8 +8,8 @@ function LandingB() {
     return (
         <div className='cont-texto-imagenes'>
             <div className='subCont-textos'>
-                <p className="texto-somos">SOMOS</p>
-                <img src={logoTexto} alt='' className='logoTexto' />
+                <h2 className="texto-somos">SOMOS</h2>
+                <img src={logoTexto} alt='not found' className='logoTexto' />
                 <p className="texto-sup">
                     Nos dedicamos a realizar gestiones inmobiliarias, con un enfoque en propiedades de diseño único.
                     <br />

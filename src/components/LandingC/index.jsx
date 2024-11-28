@@ -11,7 +11,7 @@ function LandingC() {
     return (
         <div className='cont-landing-C'>
             <div className='cont-fila-1'>
-                <p className="titulo-land-C">¿QUE HACEMOS?</p>
+                <h2 className="titulo-land-C">¿QUE HACEMOS?</h2>
                 <p className='texto-2-land-C'>Servicios inmobiliarios premium para ayudarte con la propiedad de tus sueños</p>
             </div>
             <div className='cont-fila-2'>
