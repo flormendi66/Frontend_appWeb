@@ -1,6 +1,6 @@
 //desarrollo
 //const desarrollo = "http://localhost:3001";
 //producción
-const produccion = "https://flowing-bonito-434714-t7.rj.r.appspot.com";
+const produccion = "https://inmobiliariaflor-b5b5afc17722.herokuapp.com";
 
 export const actual = produccion;
