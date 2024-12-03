@@ -14,6 +14,7 @@ function Modal({imagenes}) {
 
     return (
         <div className='contModal'>
+            <p className='mesaj-pos-horizontal'>Gira el telefono a posición horizontal</p>
             <div className='cont-btn-cierra-modal'>
                 <button
                     className='btn-close-modal'
