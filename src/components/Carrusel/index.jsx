@@ -61,7 +61,7 @@ function Carrusel({imagenes}) {
                 />
                 {/* msj toolTip */}
                 {
-                    showTooltip && <div className="tooltipImg">{tooltipTextImg}</div>
+                    /* showTooltip && <div className="tooltipImg">{tooltipTextImg}</div> */
                 }
                 {/* btn prox */}
                 <button className='btn-carrusel-next' onClick={() => handleClickNext()}>
@@ -80,11 +80,11 @@ function Carrusel({imagenes}) {
 
             {/* Modal img */}
             {
-                isOpen && (
+                /* isOpen && (
                     <div className='modal-overlay'>
                         <Modal imagenes={imagenes}/>
                     </div>
-                )
+                ) */
             }
             
         </div>
