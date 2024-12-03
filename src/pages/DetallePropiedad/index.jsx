@@ -196,11 +196,11 @@ function DetalleProp(){
                     <MapProp lat={propiedad.geoLat} lng={propiedad.geoLong} />
                 </div>
 
-                {/* Modal Video */}                
+                {/* Modal Video */}              
                 {
-                    contexto.isOpenModalVideo && <ModalVideo />
+                    contexto.isOpenModalVideo && 
+                    <ModalVideo video={propiedad.videos[0]}/>
                 }
-                
             </div>
         </div>
     )

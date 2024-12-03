@@ -38,7 +38,7 @@ function PropsAlqTemp() {
             <div className='cont-titulo-y-props-venta'>
                 {/* titulo */}
                 <div className='cont-titulo-venta'>
-                    <p className='titulo-props-venta'>Propiedades en Alquiler</p>
+                    <p className='titulo-props-venta'>Propiedades en Alquiler Temporario</p>
                 </div>
 
                 {/* barra lat */}

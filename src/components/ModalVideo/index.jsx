@@ -3,7 +3,7 @@ import { InmobiliariaContext } from '../../Context'
 import './estilos.css';
 
 
-function ModalVideo() {
+function ModalVideo({video}) {
 
     const contexto = useContext(InmobiliariaContext);
 
@@ -22,8 +22,8 @@ function ModalVideo() {
             <iframe 
                 width="80%" 
                 height="80%" 
-                src="https://www.youtube.com/embed/M6tLJTwcp1g?si=KwGiXd2BA_f_HULF" 
-                title="YouTube video player" 
+                src={video} 
+                title="video propiedad" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" 
