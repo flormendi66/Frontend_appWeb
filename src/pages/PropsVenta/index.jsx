@@ -39,17 +39,17 @@ function PropsVenta() {
                 </div>
                 <div className='cont-barraLateral-Y-listaProps-venta'>
                     <div className='cont-barraLateral-venta'>
-                    <BarraLateral
-                                muestraVentaAlq={'false'}
-                                soloAlq={'false'}
-                                setCurrentPage={setCurrentPage}
-                                setOperacion={setOperacion}
-                                setTipoPropiedad={setTipoPropiedad}
-                                precioMin={precioMin}
-                                setPrecioMin={setPrecioMin}
-                                precioMax={precioMax}
-                                setPrecioMax={setPrecioMax}
-                            />
+                        <BarraLateral
+                            muestraVentaAlq={'false'}
+                            soloAlq={'false'}
+                            setCurrentPage={setCurrentPage}
+                            setOperacion={setOperacion}
+                            setTipoPropiedad={setTipoPropiedad}
+                            precioMin={precioMin}
+                            setPrecioMin={setPrecioMin}
+                            precioMax={precioMax}
+                            setPrecioMax={setPrecioMax}
+                        />
                     </div>
                     <div className='cont-listaProps-Y-paginacion-venta'>
                         <ListaPropiedades allProps={allProps} id='listaProps' />

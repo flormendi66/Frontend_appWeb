@@ -9,7 +9,7 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import { formatMoney } from '../../Helps';
 import './styles.css'
 
-function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, dormitorios, unidadMedida, tipo }) {
+function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublicacion, ambientes, dormitorios, supTotal, unidadMedida, tipo }) {
 
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
@@ -57,6 +57,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
                             {operacion[0].precios[0].moneda} {formatMoney(operacion[0].precios[0].precio)}
                         </p>
                     </div>
+                    {/* favorito */}
                     <div className='cont-fav'>
                         <Favorito 
                             id={id}
@@ -79,7 +80,7 @@ function Card({ id, direccionF, cantCocheras, operacion, imagenes, tituloPublica
                 <div className='div-info2'>
                     <IconoSup />                    
                     <p className='info2'>Superficie</p>
-                    <p className='info2'>{unidadMedida}</p>
+                    <p className='info2'>{supTotal}m2</p>
                 </div>
 
                 {
