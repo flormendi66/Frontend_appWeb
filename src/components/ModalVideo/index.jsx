@@ -19,16 +19,22 @@ function ModalVideo({video}) {
                 </button>
             </div>
 
-            <iframe 
-                width="80%" 
-                height="80%" 
-                src={video} 
-                title="video propiedad" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen
-            ></iframe>
+            {
+                video ? (
+                    <iframe
+                        width="80%"
+                        height="80%"
+                        src={video}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                ) : (
+                    <h2 style={{color:'white'}}>Por el momento la propiedad no tiene Viedo</h2>
+                )
+            }
         </div>
     )
 

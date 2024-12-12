@@ -199,7 +199,7 @@ function DetalleProp(){
                 {/* Modal Video */}              
                 {
                     contexto.isOpenModalVideo && 
-                    <ModalVideo video={propiedad.videos[0].player_url}/>
+                    <ModalVideo video={propiedad.videos[0]?.player_url}/>
                 }
             </div>
         </div>
