@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
@@ -12,10 +12,34 @@ import './styles.css';
 function NavbarConRedes() {
 
     const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null); // Referencia para el menú hamburguesa
+    const menuItemsRef = useRef([]); // Referencia para los elementos del menú
 
+    //abrcierra menú hamburguesa
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    // Cierra el menú hamburguesa al hacer clic o tocar fuera de él
+    useEffect(() => {
+        function handleClickOutside(event) {
+            // Verificar si el clic o toque es fuera del menú
+            if (
+                menuRef.current && !menuRef.current.contains(event.target) && 
+                !menuItemsRef.current.some(item => item.contains(event.target))
+            ) {
+                setIsOpen(false); // Cierra el menú si no es clic en el menú
+            }
+        }
+
+        // Escuchar el evento pointerdown (compatible con mouse y táctil)
+        document.addEventListener('pointerdown', handleClickOutside);
+        return () => {
+            // Limpiar el evento cuando el componente se desmonta
+            document.removeEventListener('pointerdown', handleClickOutside);
+        };
+    }, []);
+
 
     return (
         <nav>
@@ -93,6 +117,7 @@ function NavbarConRedes() {
                     <div
                         className={`menu-icon ${isOpen ? 'open' : ''}`}
                         onClick={toggleMenu}
+                        ref={menuRef}
                     >
                         <span></span>
                         <span></span>
@@ -104,28 +129,25 @@ function NavbarConRedes() {
                             isOpen && (
                                 <ul className='ul-lista-pChica'>
                                     <li className='items-pChica'>
-                                        <Link to='/' className='link-navbar'>Home</Link>
+                                        <Link to='/' className='link-navbar' ref={el => menuItemsRef.current[0] = el}>Home</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/venta' className='link-navbar'>Venta</Link>
+                                        <Link to='/venta' className='link-navbar' ref={el => menuItemsRef.current[1] = el}>Venta</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/alquiler' className='link-navbar'>Alquiler</Link>
-                                    </li>
-                                    {/* <li className='items-pChica'>
-                                        <Link to='/alqTemp' className='link-navbar'>Alquiler Temporario</Link>
-                                    </li> */}
-                                    <li className='items-pChica'>
-                                        <Link to='/alqTemp' className='link-navbar'>Alq. temporario</Link>
+                                        <Link to='/alquiler' className='link-navbar' ref={el => menuItemsRef.current[2] = el}>Alquiler</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/favoritos' className='link-navbar'>Favoritos</Link>
+                                        <Link to='/alqTemp' className='link-navbar' ref={el => menuItemsRef.current[3] = el}>Alq. temporario</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/contacto' className='link-navbar'>Contacto</Link>
+                                        <Link to='/favoritos' className='link-navbar' ref={el => menuItemsRef.current[4] = el}>Favoritos</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/nosotros' className='link-navbar'>Nosotros</Link>
+                                        <Link to='/contacto' className='link-navbar' ref={el => menuItemsRef.current[5] = el}>Contacto</Link>
+                                    </li>
+                                    <li className='items-pChica'>
+                                        <Link to='/nosotros' className='link-navbar' ref={el => menuItemsRef.current[6] = el}>Nosotros</Link>
                                     </li>
                                 </ul>
                             )
