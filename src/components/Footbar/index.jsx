@@ -33,6 +33,10 @@ function Footbar() {
                                 <p className='info-contactos'>
                                     florenciamendive@gmail.com
                                 </p>
+
+                                <p className='info-contactos'>
+                                    Matrícula Reg. 4073
+                                </p>
                             </div>
                         </li>
                         {/* Links */}
