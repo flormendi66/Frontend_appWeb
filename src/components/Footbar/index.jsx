@@ -35,7 +35,7 @@ function Footbar() {
                                 </p>
 
                                 <p className='info-contactos'>
-                                    Matrícula Reg. 4073
+                                    Reg. 4073
                                 </p>
                             </div>
                         </li>
