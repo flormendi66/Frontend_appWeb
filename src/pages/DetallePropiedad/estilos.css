@@ -129,7 +129,7 @@
 }
 .cont-imagenes{
     width: 60%;
-    max-height: 580px;
+    height: 580px;
     display: flex;
     justify-content: center;
     align-items: center;
