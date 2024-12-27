@@ -5,10 +5,12 @@ import BarraLateral from '../../components/Barra-Lateral';
 import ListaPropiedades from '../../components/ListaPropiedades';
 import WhatsAppButton from '../../components/BotonWhastApp';
 import Paginacion from '../../components/Paginacion';
+import Loading from '../../components/Loading';
 import './estilos.css';
 
 function PropsVenta() {
 
+    const loading = useSelector(state => state.loading);
     const [operacion, setOperacion] = useState('Venta');
     const [tipoPropiedad, setTipoPropiedad] = useState('todas');
     const [precioMin, setPrecioMin] = useState(10000);
@@ -32,42 +34,50 @@ function PropsVenta() {
     },[dispatch, limit, offset, operacion, precioMax, precioMin, tipoPropiedad]);
 
     return (
-        <div className='cont-Venta'>
-            <div className='cont-titulo-y-props-venta'>
-                <div className='cont-titulo-venta'>
-                    <p className='titulo-props-venta'>Propiedades en Venta</p>
-                </div>
-                <div className='cont-barraLateral-Y-listaProps-venta'>
-                    <div className='cont-barraLateral-venta'>
-                        <BarraLateral
-                            muestraVentaAlq={'false'}
-                            soloAlq={'false'}
-                            setCurrentPage={setCurrentPage}
-                            setOperacion={setOperacion}
-                            setTipoPropiedad={setTipoPropiedad}
-                            precioMin={precioMin}
-                            setPrecioMin={setPrecioMin}
-                            precioMax={precioMax}
-                            setPrecioMax={setPrecioMax}
-                        />
+        <div>
+            {
+                loading ? (
+                    <Loading />
+                ) : (
+                    <div className='cont-Venta'>
+                        <div className='cont-titulo-y-props-venta'>
+                            <div className='cont-titulo-venta'>
+                                <p className='titulo-props-venta'>Propiedades en Venta</p>
+                            </div>
+                            <div className='cont-barraLateral-Y-listaProps-venta'>
+                                <div className='cont-barraLateral-venta'>
+                                    <BarraLateral
+                                        muestraVentaAlq={'false'}
+                                        soloAlq={'false'}
+                                        setCurrentPage={setCurrentPage}
+                                        setOperacion={setOperacion}
+                                        setTipoPropiedad={setTipoPropiedad}
+                                        precioMin={precioMin}
+                                        setPrecioMin={setPrecioMin}
+                                        precioMax={precioMax}
+                                        setPrecioMax={setPrecioMax}
+                                    />
+                                </div>
+                                <div className='cont-listaProps-Y-paginacion-venta'>
+                                    <ListaPropiedades allProps={allProps} id='listaProps' />
+                                    {allProps[0] && (
+                                        <Paginacion
+                                            allProps={allProps}
+                                            currentPage={currentPage}
+                                            onPageChange={setCurrentPage}
+                                            totalPropiedades={totalPropiedades}
+                                            propiedadesPorPagina={propiedadesPorPagina}
+                                        />
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                        <WhatsAppButton />
                     </div>
-                    <div className='cont-listaProps-Y-paginacion-venta'>
-                        <ListaPropiedades allProps={allProps} id='listaProps' />
-                        {allProps[0] && (
-                            <Paginacion
-                                allProps={allProps}
-                                currentPage={currentPage}
-                                onPageChange={setCurrentPage}
-                                totalPropiedades={totalPropiedades}
-                                propiedadesPorPagina={propiedadesPorPagina}
-                            />
-                        )}
-                    </div>
-                </div>
-            </div>
-            <WhatsAppButton />
+                )
+            }
         </div>
-    );
+    )
 }
 
 export default PropsVenta;

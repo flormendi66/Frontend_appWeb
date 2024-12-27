@@ -5,10 +5,11 @@ import BarraLateral from '../../components/Barra-Lateral';
 import ListaPropiedades from '../../components/ListaPropiedades';
 import WhatsAppButton from '../../components/BotonWhastApp';
 import Paginacion from '../../components/Paginacion';
-
+import Loading from '../../components/Loading';
 
 function PropsAlqTemp() {
 
+    const loading = useSelector(state => state.loading);
     const [operacion, setOperacion] = useState('Alquiler temporario');
     const [tipoPropiedad, setTipoPropiedad] = useState('todas');
     const [precioMin, setPrecioMin] = useState(10000);
@@ -32,52 +33,58 @@ function PropsAlqTemp() {
     },[dispatch, limit, offset, operacion, precioMax, precioMin, tipoPropiedad]);
 
     return (
+        <div>
+            {
+                loading ? (
+                    <Loading />
+                ) : (
+                    <div className='cont-Venta'>
+                    {/* contenedor filtros y lista props */}
+                    <div className='cont-titulo-y-props-venta'>
+                        {/* titulo */}
+                        <div className='cont-titulo-venta'>
+                            <p className='titulo-props-venta'>Propiedades en Alquiler Temporario</p>
+                        </div>
 
-        <div className='cont-Venta'>
-            {/* contenedor filtros y lista props */}
-            <div className='cont-titulo-y-props-venta'>
-                {/* titulo */}
-                <div className='cont-titulo-venta'>
-                    <p className='titulo-props-venta'>Propiedades en Alquiler Temporario</p>
-                </div>
-
-                {/* barra lat */}
-                <div className='cont-barraLateral-Y-listaProps-venta'>
-                    <div className='cont-barraLateral-venta' >
-                        <BarraLateral
-                            muestraVentaAlq={'false'}
-                            soloAlq={'false'}
-                            setCurrentPage={setCurrentPage}
-                            setOperacion={setOperacion}
-                            setTipoPropiedad={setTipoPropiedad}
-                            precioMin={precioMin}
-                            setPrecioMin={setPrecioMin}
-                            precioMax={precioMax}
-                            setPrecioMax={setPrecioMax}
-                        />
+                        {/* barra lat */}
+                        <div className='cont-barraLateral-Y-listaProps-venta'>
+                            <div className='cont-barraLateral-venta' >
+                                <BarraLateral
+                                    muestraVentaAlq={'false'}
+                                    soloAlq={'false'}
+                                    setCurrentPage={setCurrentPage}
+                                    setOperacion={setOperacion}
+                                    setTipoPropiedad={setTipoPropiedad}
+                                    precioMin={precioMin}
+                                    setPrecioMin={setPrecioMin}
+                                    precioMax={precioMax}
+                                    setPrecioMax={setPrecioMax}
+                                />
+                            </div>
+                            {/* lista props y pag */}
+                            <div className='cont-listaProps-Y-paginacion-venta'>
+                                <ListaPropiedades allProps={allProps} id='listaProps' />
+                                {/* Paginación */}
+                                {
+                                    allProps[0] &&
+                                    <Paginacion
+                                        allProps={allProps}
+                                        currentPage={currentPage}
+                                        onPageChange={setCurrentPage}
+                                        totalPropiedades={totalPropiedades}
+                                        propiedadesPorPagina={propiedadesPorPagina}
+                                    />
+                                }
+                            </div>
+                        </div>
                     </div>
-                    {/* lista props y pag */}
-                    <div className='cont-listaProps-Y-paginacion-venta'>
-                        <ListaPropiedades allProps={allProps} id='listaProps' />
-                        {/* Paginación */}
-                        {
-                            allProps[0] &&
-                            <Paginacion
-                                allProps={allProps}
-                                currentPage={currentPage}
-                                onPageChange={setCurrentPage}
-                                totalPropiedades={totalPropiedades}
-                                propiedadesPorPagina={propiedadesPorPagina}
-                            />
-                        }
-                    </div>
-                </div>
-            </div>
 
-            {/* botón WhatsApp */}
-            <WhatsAppButton />
+                    {/* botón WhatsApp */}
+                    <WhatsAppButton />
+                    </div>
+                )
+            }
         </div>
-
     )
 }
 
