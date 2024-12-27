@@ -131,13 +131,15 @@
     margin-bottom: 20px;
 }
 .cont-imagenes{
-    width: 70%;
+    width: 60%;
+    height: 580px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .cont-form-contacto{
-    top: 60px;
+    position: relative;
+    top: 45px;
     width: 25%;
     height: 700px;
 }

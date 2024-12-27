@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation  } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProperty, resetProperty } from '../../Redux/Actions';
 import { InmobiliariaContext } from '../../Context';
@@ -22,6 +22,7 @@ function DetalleProp(){
     //otengo el precio de la prop
     const precio =  propiedad?.operacion?.[0]?.precios?.[0]?.precio; 
     const navigate = useNavigate();
+    const location = useLocation();
     const dispatch = useDispatch();    
     const contexto = useContext(InmobiliariaContext); 
     //estado para el tooltipText
@@ -30,7 +31,6 @@ function DetalleProp(){
     const [showTooltipVolver, setShowTooltipVolver] = useState(false);
     const tooltipTextVideo = "Ver video propiedad";
     const tooltipTextVolver = "Volver atrás";
-
 
     const handleMouseEnter = () => {
         setShowTooltipVideo(true);
@@ -45,8 +45,12 @@ function DetalleProp(){
         setShowTooltipVolver(false);
     };
 
-    const handleClickAtras = () => {
-        navigate('/');
+    const handleClickAtras = (e) => {
+        if (window.history.length > 1) {
+            navigate(-1);
+        } else {
+            navigate('/'); // Ruta por defecto si no hay historial previo.
+        }
     };
 
     useEffect(() => {
@@ -73,7 +77,7 @@ function DetalleProp(){
                     <div className='cont-btns-direccion'>
                             {/* btn-atrás */}
                             <button
-                                onClick={() => handleClickAtras()}
+                                onClick={handleClickAtras}
                                 className='btn-volver'
                                 onMouseEnter={handleMouseEnterVolver}
                                 onMouseLeave={handleMouseLeaveVolver}
