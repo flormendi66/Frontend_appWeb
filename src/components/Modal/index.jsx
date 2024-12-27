@@ -25,7 +25,10 @@ function Modal({imagenes}) {
             </div>
 
             {/* carrusel de imgs */}
-            <CarruselModal imagenes={imagenes}/>
+            <div className='cont-carrusel-modal'>
+                <CarruselModal imagenes={imagenes}/>
+            </div>
+            
         </div>
     )
 }

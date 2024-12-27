@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footbar from './components/Footbar';
@@ -14,6 +13,7 @@ import ModalVideo from './components/ModalVideo';
 import QuieroVenderPage from './pages/QuieroVender';
 import FavoritosPage from './pages/Favoritos';
 import PropsAlqTemp from './pages/AlqTemp';
+import './App.css';
 
 function App() {
   return (

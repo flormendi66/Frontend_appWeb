@@ -49,7 +49,6 @@ function Carrusel({imagenes}) {
                 <button className='btn-carrusel-prev' onClick={() => handleClickPrev()}>
                     <ArrowBackIosNewIcon />
                 </button>
-
                 {/* imagen a mostrar */}
                 <img 
                     src={imagenes[indexImgActual].original} 

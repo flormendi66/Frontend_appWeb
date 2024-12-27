@@ -67,7 +67,7 @@ function DetalleProp(){
             <div className='cont-detail'>
                 {/* datos principales */}
                 <div className='info-1'>
-                {/* Titulo prop */}
+                    {/* Titulo prop */}
                     <div className='cont-titulo-detalle'>
                         <span className='detalle-titulo-prop'>
                             {propiedad.tituloPublicacion}
@@ -173,7 +173,7 @@ function DetalleProp(){
                                     <p className='p-col-1'>{propiedad.baños}</p>
                                 </div>
                                 <div className='cont-p-col-1'>
-                                    <p className='p-col-1'>Tipo Operacio:</p>
+                                    <p className='p-col-1'>Tipo Op:</p>
                                     {
                                         propiedad.operacion?.map(o => {
                                             return (

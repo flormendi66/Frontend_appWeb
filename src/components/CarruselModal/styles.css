@@ -37,8 +37,22 @@
 }
 
 /* responsive */
-@media screen and (max-width: 650px){
-    .img-carrusel{
-        height: 300px;
+@media screen and (max-width: 800px) and (min-width: 671px){
+    .contGralCarruselM{
+        position: relative;
+        max-width: 80%;
+        max-height: 60%;
+        top: -80px;
+        justify-content: start;
+    }
+    .img-carruselM{
+        max-height: 350px;
+    }
+}
+@media screen and (max-width: 670px){
+    .contGralCarruselM{
+        max-width: 80%;
+        max-height: 80%;
+        justify-content: start;
     }
 }
