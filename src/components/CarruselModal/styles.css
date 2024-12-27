@@ -27,6 +27,19 @@
 .btn-carrusel-prev{
     left: 10px;
 }
+.cont-img-carruselM-btnCierraModal{
+    position: relative;
+    width: 100%;
+}
+.cont-btn-cierra-modal{
+    width: 70px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0px;
+    left: 5px;
+    z-index: 1;
+}
 .img-carruselM{
     width: 100%;
     max-height: 586px;
@@ -44,6 +57,11 @@
         max-height: 60%;
         top: -80px;
         justify-content: start;
+    }
+    .cont-img-carruselM-btnCierraModal{
+        position: relative;
+        width: 100%;
+        top: -15px;
     }
     .img-carruselM{
         max-height: 350px;
