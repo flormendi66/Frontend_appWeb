@@ -128,7 +128,7 @@
     margin-bottom: 20px;
 }
 .cont-imagenes{
-    max-width: 60%;
+    width: 60%;
     max-height: 580px;
     display: flex;
     justify-content: center;
