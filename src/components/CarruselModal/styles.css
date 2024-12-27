@@ -9,7 +9,8 @@
 .cont-img-btns{
     position: relative;
 }
-.btn-carrusel-prev, .btn-carrusel-next{
+.btn-carrusel-prev, 
+.btn-carrusel-next{
     width: auto;
     height: auto;
     position: absolute;

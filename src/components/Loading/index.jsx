@@ -7,7 +7,7 @@ function Loading() {
             <div class="spinner">
                 <div class="spinnerin"></div>
             </div>
-            <p>Cargando props ...</p>
+            <p>Cargando propiedades ...</p>
         </div>
     )
 }

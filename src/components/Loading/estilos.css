@@ -1,10 +1,11 @@
 .cont-loading{
     width: 100%;
-    height: 300px;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: url('../../Imagenes/Texturas/Textura-02.jpg');
 }
 .spinner {
     width: 3em;
@@ -12,7 +13,7 @@
     cursor: not-allowed;
     border-radius: 50%;
     border: 2px solid #444;
-    box-shadow: -10px -10px 10px #6359f8, 0px -10px 10px 0px #9c32e2, 10px -10px 10px #f36896, 10px 0 10px #ff0b0b, 10px 10px 10px 0px#ff5500, 0 10px 10px 0px #ff9500, -10px 10px 10px 0px #ffb700;
+    box-shadow: -10px -10px 10px #515056, 0px -10px 10px 0px #5c503d, 10px -10px 10px #44373c, 10px 0 10px #514c2c, 10px 10px 10px 0px#517070, 0 10px 10px 0px #5d3d10, -10px 10px 10px 0px #3a4e45;
     animation: rot55 0.7s linear infinite;
 }
 .spinnerin {
