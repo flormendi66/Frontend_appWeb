@@ -14,6 +14,7 @@ import QuieroVenderPage from './pages/QuieroVender';
 import FavoritosPage from './pages/Favoritos';
 import PropsAlqTemp from './pages/AlqTemp';
 import './App.css';
+import Emprendimineto from './pages/Emprendimientos';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/alquiler' element={<PropsAlquiler />} />
           <Route path='/vender' element={<QuieroVenderPage/>} />
           <Route path='/alqTemp' element={<PropsAlqTemp />} />
+          <Route path='/emprendimiento' element={<Emprendimineto/>} />
           <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contactanos />} />
           <Route path='/favoritos' element={<FavoritosPage />} />

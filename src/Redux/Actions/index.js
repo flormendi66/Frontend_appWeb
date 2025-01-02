@@ -2,6 +2,7 @@ import axios from "axios";
 import { 
     GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, MUESTRA_DESTACADAS, 
     RESET_PROPS, RESET_PROPERTY,
+    GET_EMPRENDIMIENTOS,
 } from "./ActionsType";
 import { actual } from "../../urls";
 
@@ -68,5 +69,19 @@ export const isOpenModalPicture = () => {
 export const resetPropiedades = () => {
     return function(dispatch){
         dispatch({type: RESET_PROPS});
+    }
+}
+
+//---trae emprendimientos
+export const getEmprendimientos = () => {
+    return async function(dispatch) {
+        dispatch({type: LOADING});
+
+        try {
+            const resp = await axios.get(`${actual}/emprendimientos`);
+            dispatch({type: GET_EMPRENDIMIENTOS, payload: resp.data.objects});
+        } catch (error) {
+            console.log(error);
+        }
     }
 }

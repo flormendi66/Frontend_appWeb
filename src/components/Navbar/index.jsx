@@ -75,7 +75,7 @@ function NavbarConRedes() {
                             </a>
                         </div>
                     </div>
-
+                    {/* barra inf */}
                     <div className='nav-inf'>
                         <ul className='ul-nav-inf'>
                             <li>
@@ -90,7 +90,12 @@ function NavbarConRedes() {
                             </li>
                             <li>
                                 <NavLink to='/alqtemp'>
-                                    Alq. temporarios
+                                    Alq Temp
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/emprendimiento' >
+                                    Emprendimiento
                                 </NavLink>
                             </li>
                             <li>
@@ -141,13 +146,16 @@ function NavbarConRedes() {
                                         <Link to='/alqTemp' className='link-navbar' ref={el => menuItemsRef.current[3] = el}>Alq. temporario</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/favoritos' className='link-navbar' ref={el => menuItemsRef.current[4] = el}>Favoritos</Link>
+                                        <Link to='/emprendimiento' className='link-navbar' ref={el => menuItemsRef.current[4] = el}>Emprendimiento</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/contacto' className='link-navbar' ref={el => menuItemsRef.current[5] = el}>Contacto</Link>
+                                        <Link to='/favoritos' className='link-navbar' ref={el => menuItemsRef.current[5] = el}>Favoritos</Link>
                                     </li>
                                     <li className='items-pChica'>
-                                        <Link to='/nosotros' className='link-navbar' ref={el => menuItemsRef.current[6] = el}>Nosotros</Link>
+                                        <Link to='/contacto' className='link-navbar' ref={el => menuItemsRef.current[6] = el}>Contacto</Link>
+                                    </li>
+                                    <li className='items-pChica'>
+                                        <Link to='/nosotros' className='link-navbar' ref={el => menuItemsRef.current[7] = el}>Nosotros</Link>
                                     </li>
                                 </ul>
                             )

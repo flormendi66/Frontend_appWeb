@@ -1,4 +1,5 @@
 import { 
+    GET_EMPRENDIMIENTOS,
     GET_PROPERTY, GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING,  RESET_PROPERTY,
     RESET_PROPS,   
 } from "../Actions/ActionsType";
@@ -8,6 +9,7 @@ const initialState = {
     totPropiedades: 0,
     propiedad: {},
     tipoOp: [],
+    emprendimientos: [],
     loading: true,
     isOpenModalPicture: false,
 };
@@ -46,6 +48,12 @@ export default function rootReducer (state = initialState, action) {
             return{
                 ...state,
                 propiedades: []
+            }
+        case GET_EMPRENDIMIENTOS:
+            return{
+                ...state,
+                emprendimientos: action.payload,
+                loading: false
             }
             default:
             return state;

@@ -1,81 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProps } from '../../Redux/Actions';
-import Loading from '../../components/Loading';
+import { getEmprendimientos } from '../../Redux/Actions';
 import BarraLateral from '../../components/Barra-Lateral';
-import ListaPropiedades from '../../components/ListaPropiedades';
 import WhatsAppButton from '../../components/BotonWhastApp';
-import Paginacion from '../../components/Paginacion';
+import Loading from '../../components/Loading';
+import ListaEmprendimientos from '../../components/ListaEmprendimientos';
+import './styles.css';
 
-function PropsVenta() {
 
-    const loading = useSelector(state => state.loading);
-    //const [operacion, setOperacion] = useState('');
-    const [tipoPropiedad, setTipoPropiedad] = useState('todas'); 
-    const [currentPage, setCurrentPage] = useState(1);
-    const allProps = useSelector(state => state.propiedades);
-    const totalPropiedades = useSelector(state => state.totPropiedades);
+function Emprendimiento() {
+
+    const loading = useSelector(state => state.loading);  
+    const allEmp = useSelector(state => state.emprendimientos); 
     const dispatch = useDispatch();
-
-    const propiedadesPorPagina = 12;
-    const limit = propiedadesPorPagina;    
-    const offset = (currentPage - 1) * limit;
 
     //efecto para iniciar la Pag desd la parte SUPERIOR
     useEffect(() => {
         // Desplaza la página hacia la parte superior cuando el componente se monta
         window.scrollTo(0, 0);
-      }, []); // El array vacío asegura que se ejecute solo al montar el componente
+    }, []); // El array vacío asegura que se ejecute solo al montar el componente
     
     useEffect(()=>{
-        dispatch(getProps(limit, offset, "Emprendimiento", tipoPropiedad));
-    },[dispatch, limit, offset, tipoPropiedad]);
+        dispatch(getEmprendimientos());
+    },[dispatch]);
 
     return (
         <div>
             {
                 loading ? (
-                    <>
-                        <Loading/>
-                    </>
+                    <Loading />
                 ) : (
-                    <div className='cont-prop-Venta'>
-                        {/* contenedor filtros y lista props */}
-                            <div className='cont-titulo-props-venta'>
-                            
-
-                                <div className='cont-filtros-listaProps-venta'>
-                                    <div className='cont-barraL venta'>
-                                        <BarraLateral
-                                            muestraVentaAlq={'false'}
-                                            limit={limit}  // Aquí pasamos el valor de limit al componente BarraLateral
-                                            offset={offset} // También pasamos el offset
-                                            setCurrentPage={setCurrentPage}
-                                            /* setOperacion={setOperacion} */
-                                            setTipoPropiedad={setTipoPropiedad}  // Nuevo prop para manejar tipoPropiedad
-                                        />
-                                    </div>
-
-                                    <div className='cont-listaProps'>
-                                        <div className='cont-titulo-conoce-propiedades'>
-                                            <p className='titulo-props-venta'>Emprendimientos</p>
-                                        </div>
-                                        <ListaPropiedades allProps={allProps} id='listaProps' />
-                                        {
-                                            allProps[0] &&
-                                            <Paginacion
-                                            allProps={allProps}
-                                            currentPage={currentPage}
-                                            onPageChange={setCurrentPage}
-                                            totalPropiedades={totalPropiedades}
-                                            propiedadesPorPagina={propiedadesPorPagina}
-                                        />
-                                        }
-                                    </div>
+                    <div className='cont-Venta cont-emp-page'>
+                        <div className='cont-titulo-y-props-venta'>
+                            <div className='cont-titulo-venta'>
+                                <p className='titulo-props-venta'>Emprendimientos, oportunidades de negocios</p>
+                            </div>
+                            <div className='cont-barraLateral-Y-listaProps-venta'>
+                                <div className='cont-barraLateral-venta'>
+                                    <BarraLateral
+                                        muestraVentaAlq={'false'}
+                                        soloAlq={'false'}
+                                        soloAlqTemp={'false'}
+                                    />
+                                </div>
+                                <div className='cont-listaProps-Y-paginacion-venta'>
+                                    <ListaEmprendimientos allEmp={allEmp} />
+                                    
                                 </div>
                             </div>
-
-                        {/* botón WhatsApp */}
+                        </div>
                         <WhatsAppButton />
                     </div>
                 )
@@ -84,4 +57,4 @@ function PropsVenta() {
     )
 }
 
-export default PropsVenta
+export default Emprendimiento;

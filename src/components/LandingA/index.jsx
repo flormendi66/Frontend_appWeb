@@ -18,13 +18,16 @@ function LandingPage2() {
             <div className='cont-inf'>
                 <div className="sub-cont-infe right-slide">
                     <Link to={'/venta'}>
-                        <button className='btn-landing'>Quirero Comprar</button>
+                        <button className='btn-landing'>Comprar</button>
                     </Link>
                     <Link to={'/alquiler'}>
-                        <button className='btn-landing'>Quiero Alquilar</button>
+                        <button className='btn-landing'>Alquilar</button>
                     </Link>
                     <Link to={'/vender'}>
-                        <button className='btn-landing'>Quiero Vender</button>
+                        <button className='btn-landing'>Vender</button>
+                    </Link>
+                    <Link to={'/emprendimiento'}>
+                        <button className='btn-landing'>Emprendimientos</button>
                     </Link>
                 </div>
             </div>
