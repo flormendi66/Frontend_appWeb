@@ -144,10 +144,15 @@ function DetalleProp(){
                                 <div className='cont-descrip'>
                                     <p className='titulo-descrip-prop'>Descripción Propiedad</p>
                                     {/* Renderizar HTML dentro de la descripción */}
-                                    <p
-                                        className='p-descrip-detalle'
-                                        dangerouslySetInnerHTML={{ __html: propiedad.descripcion }}
-                                    />
+                                        <p
+                                            className="p-descrip-detalle"
+                                            dangerouslySetInnerHTML={{
+                                                __html: propiedad?.descripcion
+                                                    ? propiedad.descripcion.replace(/\n/g, '<br />')
+                                                    : '', // Muestra una cadena vacía si descripcion no está definida
+                                            }}
+                                        />
+
                                 </div>
 
                                 <div className='cont-descrip'>
