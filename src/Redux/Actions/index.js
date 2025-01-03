@@ -1,8 +1,8 @@
 import axios from "axios";
 import { 
     GET_PROPERTY,  GET_PROPS, IS_OPEN_MODAL_PICTURE, LOADING, MUESTRA_DESTACADAS, 
-    RESET_PROPS, RESET_PROPERTY,
-    GET_EMPRENDIMIENTOS,
+    RESET_PROPS, RESET_PROPERTY, GET_EMPRENDIMIENTOS, GET_EMPRENDIMIENTO,
+    RESET_EMPRENDIMIENTO,
 } from "./ActionsType";
 import { actual } from "../../urls";
 
@@ -72,16 +72,33 @@ export const resetPropiedades = () => {
     }
 }
 
-//---trae emprendimientos
+//--EMPRENDIMIENTOS------------------------------
+//trae emprendimientos
 export const getEmprendimientos = () => {
     return async function(dispatch) {
         dispatch({type: LOADING});
 
         try {
-            const resp = await axios.get(`${actual}/emprendimientos`);
-            dispatch({type: GET_EMPRENDIMIENTOS, payload: resp.data.objects});
+            const resp = await axios.get(`${actual}/emprendimientos`); 
+            dispatch({type: GET_EMPRENDIMIENTOS, payload: resp.data});
         } catch (error) {
             console.log(error);
         }
+    }
+}
+
+//trae emprendimiento por ID
+export const getEmprendimiento = (id) => { 
+    return async function(dispatch) {
+        dispatch({type: LOADING});
+        const resp = await axios.get(`${actual}/emprendimientos/${id}`);
+        dispatch({type: GET_EMPRENDIMIENTO, payload: resp.data});
+    }
+}
+
+//reset emprendimientos
+export const resetEmprendimientos = () => {
+    return function(dispatch){
+        dispatch({type: RESET_EMPRENDIMIENTO});
     }
 }

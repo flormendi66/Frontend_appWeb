@@ -7,7 +7,7 @@ import IconoDormitorio from '../../Imagenes/Iconos/IconoDormitorios';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import './styles.css';
 
-function CardEmprendimiento({ id, codigoReferencia, imagen, direccionF, locacion, tituloPublicacion, tipo }) {
+function CardEmprendimiento({ id, imagen, direccionF, locacion, tituloPublicacion, tipo }) {
 
     //estado para el hover
     const [showDetail, setShowDetail] = useState(false);
@@ -20,7 +20,7 @@ function CardEmprendimiento({ id, codigoReferencia, imagen, direccionF, locacion
             </div>
 
             {/* img + animacion + abre detalle */}
-            <NavLink to={`/detalle/${id}`} className='navLink-car'>
+            <NavLink to={`/detalleEmp/${id}`} className='navLink-car'>
                 <div
                     onMouseEnter={() => setShowDetail(true)}
                     onMouseLeave={() => setShowDetail(false)}
