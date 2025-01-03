@@ -83,7 +83,7 @@ nav {
     list-style: none;
     font-size: 24px;
     font-weight: 100;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 /* quito line y cambio color etiqtas a y Link */
 a, Link{
@@ -196,7 +196,7 @@ a, Link{
     }
     
 }
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 850px) {
     /* cont logo */
     .cont-logo{
         width: 90%;

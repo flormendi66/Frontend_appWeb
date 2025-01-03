@@ -7,7 +7,6 @@ import DetalleProp from './pages/DetallePropiedad';
 import PropsVenta from './pages/PropsVenta';
 import PropsAlquiler from './pages/PropsAlquiler';
 import Contactanos from './pages/Contactanos';
-import Nosotros from './pages/Nosotros';
 import { InmobiliariaProvider } from './Context';
 import ModalVideo from './components/ModalVideo';
 import QuieroVenderPage from './pages/QuieroVender';
@@ -33,7 +32,6 @@ function App() {
           <Route path='/alqTemp' element={<PropsAlqTemp />} />
           <Route path='/emprendimiento' element={<Emprendimineto/>} />
           <Route path='/detalleEmp/:id' element={<DetalleEmp/>} />
-          <Route path='/nosotros' element={<Nosotros />} />
           <Route path='/contacto' element={<Contactanos />} />
           <Route path='/favoritos' element={<FavoritosPage />} />
           <Route path='*' element={<Home />} />

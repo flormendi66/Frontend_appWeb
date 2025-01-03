@@ -104,11 +104,6 @@ function NavbarConRedes() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to='/nosotros' >
-                                    Nosotros
-                                </NavLink>
-                            </li>
-                            <li>
                                 <NavLink to='/favoritos' >
                                     Favoritos
                                 </NavLink>
@@ -153,9 +148,6 @@ function NavbarConRedes() {
                                     </li>
                                     <li className='items-pChica'>
                                         <Link to='/contacto' className='link-navbar' ref={el => menuItemsRef.current[6] = el}>Contacto</Link>
-                                    </li>
-                                    <li className='items-pChica'>
-                                        <Link to='/nosotros' className='link-navbar' ref={el => menuItemsRef.current[7] = el}>Nosotros</Link>
                                     </li>
                                 </ul>
                             )
