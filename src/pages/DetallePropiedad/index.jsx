@@ -3,6 +3,7 @@ import { useNavigate, useParams  } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProperty, resetProperty } from '../../Redux/Actions';
 import { InmobiliariaContext } from '../../Context';
+import { formatMoney } from '../../Helps';
 import Carrusel from '../../components/Carrusel';
 import MapProp from '../../components/MapaProp';
 import FormularioContacto from '../../components/FormularioContacto';
@@ -10,7 +11,6 @@ import ModalVideo from '../../components/ModalVideo';
 import IconoUbicacion from '../../Imagenes/iconoUbicacion.png';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { formatMoney } from '../../Helps';
 import Loading from '../../components/Loading';
 import './estilos.css';
 

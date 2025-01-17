@@ -89,7 +89,7 @@ function FormularioQuieroVender() {
             <header>
                 <div className='header-vender'>
                     <div className='cont-tazacion'>
-                        <h2 className='h2-tazacion'>Tazaciones</h2>
+                        <h2 className='h2-tazacion'>Tasaciones</h2>
                     </div>
                 </div>
             </header>
